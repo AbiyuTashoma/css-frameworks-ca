@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/css/index.css">
-    <title>Document</title>
-</head>
-<body class="bg-light">
-    <form action="profile.html">
-        <div class="d-flex justify-content-center my-2 gap-2">
-            <label for="username">Username</label>
-            <input type="text" id="username">
-        </div>
-        <div class="d-flex justify-content-center my-2 gap-2">
-            <label for="password">Password</label>
-            <input type="password" id="password">
-        </div>
-        <div class="d-flex justify-content-center my-2">
-            <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dist/css/index.css">
+        <title>Document</title>
+    </head>
+    <body class="bg-light">
+        <form action="profile.html" class="login-form" novalidate>
+            <div class="col-12 col-sm-4 col-xl-3 my-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" required>
+                <div class="feedback-name text-danger"></div>             
+            </div>
+            <div class="col-12 col-sm-4 col-xl-3 my-3">
+                <label for="password" class="form-label">&nbsp;Password</label>
+                <input type="password" class="form-control" id="password" required>
+                <div class="feedback-password text-danger"></div> 
+            </div>
+            <div class="col-12 my-3">
+                <input type="submit" class="btn btn-primary" value="Login"></button>
+            </div>
+        </form>
+
+        <script src="src/js/components/validate.js"></script>
+        <script src="src/js/authenticate.js"></script>
+    </body>
 </html>
