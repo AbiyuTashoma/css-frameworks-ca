@@ -15,7 +15,7 @@ function validateEmail (emailValue) {
 }
 
 function setError(noteContainer, inputContainer, errorMessage) {
-    noteContainer.innerHTML = `<div class="note">${errorMessage}</div>`;
+    noteContainer.innerHTML = `<div>${errorMessage}</div>`;
     inputContainer.style.borderColor = "red";
 }
 

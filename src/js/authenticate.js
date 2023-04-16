@@ -29,7 +29,7 @@ function validate(event) {
     if (!validName) {
         event.preventDefault()
         validLogin = false;
-        setError(feedbackNameContainer, userNameContainer, "Name should be atleast be a character");
+        setError(feedbackNameContainer, userNameContainer, "Name should atleast be a character");
     }
 
     if (!validPassword) {
