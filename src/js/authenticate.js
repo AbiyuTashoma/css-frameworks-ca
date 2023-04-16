@@ -6,7 +6,7 @@ const feedbackPasswordContainer = document.querySelector(".feedback-password");
 
 const formContainer = document.querySelector(".login-form");
 
-//clear error message onchange and oninput
+//clear error message oninput
 userNameContainer.oninput = function() {
     clearError(feedbackNameContainer, userNameContainer);
 }
@@ -15,8 +15,8 @@ passwordContainer.oninput = function () {
     clearError(feedbackPasswordContainer, passwordContainer);
 }
 
+//validate input
 function validate(event) {
-    // event.preventDefault()
 
     let validLogin = true;
 
@@ -29,7 +29,7 @@ function validate(event) {
     if (!validName) {
         event.preventDefault()
         validLogin = false;
-        setError(feedbackNameContainer, userNameContainer, "Name should atleast be a character");
+        setError(feedbackNameContainer, userNameContainer, "Name should be atleast be a character");
     }
 
     if (!validPassword) {
@@ -37,11 +37,6 @@ function validate(event) {
         validLogin = false;
         setError(feedbackPasswordContainer, passwordContainer, "Password should atleast be 8 characters");
     }
-
-    // if (validLogin) {
-    //     formContainer.reset();
-    //     event.run();
-    // }
 
 }
 
