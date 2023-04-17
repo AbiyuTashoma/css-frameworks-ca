@@ -5,42 +5,47 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="dist/css/index.css">
-        <title>Profile</title>
+        <title>Posts</title>
     </head>
     <body class="bg-light">
-        <div class="container text-center my-4">
-            <div class="row justify-content-center">
-                <img src="src/Image/user.png" class="rounded-circle profile-image" alt="profile picture">
+        <div class="container my-3 col-12 col-sm-8 col-xl-6">
+            <div class="row my-3">
+                <div class="input-group col me-3">
+                    <label class="input-group-text" for="orderby">Order by</label>
+                    <select class="form-select" id="orderby">
+                        <option value="date">Latest</option>
+                        <option value="popular">Popular</option>
+                        <option value="trending">Trending</option>
+                    </select>
+                </div>
+                <div class="input-group col">
+                    <label class="input-group-text" for="search">Search</label>
+                    <input type="search" class="form-control" id="search">
+                </div>
             </div>
-            <div class="row my-2">
-                <span class="fs-5">Profile Name</span>
-            </div>
-            <div>
-                <button type="button" class="custom-btn btn-primary btn-sm">
-                    <span>follow</span>
-                    <img src="src/Image/add-user.png" class="follow-icon" alt="profile picture">
+
+        </div>
+        <nav class="navbar container my-3 col-12 col-sm-8 col-xl-6">
+            <div class="container justify-content-center">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#createContent" aria-controls="createContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span>Create post +</span>
                 </button>
+                
+                <form action=""  class="collapse navbar-collapse my-2" id="createContent">
+                    <div class="input-group">
+                        <textarea class="form-control" aria-label="Text content" placeholder="Text content"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <input type="file" class="form-control" value="Upload">
+                    </div>
+                    <div class="row justify-content-center my-2">
+                        <div class="row col-10 col-sm-6 col-xl-3">
+                            <input type="submit" class="custom-btn btn-primary" value="Post"></button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="d-flex justify-content-center align-items-center gap-3 my-2">
-                <div class="d-flex flex-column">
-                    <div>
-                        <span>following</span>
-                    </div>
-                    <div>
-                        <span>129</span>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="d-flex flex-column">
-                    <div>
-                        <span>followers</span>
-                    </div>
-                    <div>
-                        <span>12900</span>
-                    </div>
-                </div>
-            </div>
-        </div> 
+        </nav>
         <div class="container my-3 col-12 col-sm-8 col-xl-6">
             <div class="d-flex align-items-center gap-2">
                 <img src="src/Image/user.png" class="rounded-circle post-userimage" alt="profile picture">
@@ -99,7 +104,6 @@
             </div>
         </div>    
 
-        <script src="src/js/components/validate.js"></script>
-        <script src="src/js/authenticate.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
