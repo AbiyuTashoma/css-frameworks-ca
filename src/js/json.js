@@ -72,3 +72,18 @@ mySet.add(1);
 mySet.add('1');
 console.log(mySet);
 console.log(mySet.has(1)); //check an element
+
+//class
+class Person {
+    constructor (firstName, lastName = 'junk') {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    
+    speak () {
+        console.log(`Hello ${this.firstName} ${this.lastName}`)
+    }
+}
+
+const aPerson = new Person('Dave', 'chappel');
+aPerson.speak();
