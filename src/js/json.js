@@ -57,3 +57,11 @@ const [d, e, ...remain] = coord;
 console.log(x, y);
 console.log(a, b);
 console.log(d, e, remain);
+
+//map
+const myMap = new Map();
+myMap.set('key0', 1);
+myMap.set('key1', 2);
+console.log(myMap);
+console.log(myMap.get('key1'));
+console.log(myMap.size);
