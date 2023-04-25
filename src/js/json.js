@@ -58,10 +58,17 @@ console.log(x, y);
 console.log(a, b);
 console.log(d, e, remain);
 
-//map
+//map .set .get .size .delete
 const myMap = new Map();
 myMap.set('key0', 1);
 myMap.set('key1', 2);
 console.log(myMap);
 console.log(myMap.get('key1'));
 console.log(myMap.size);
+
+//set .add .has .size .delete
+const mySet = new Set();
+mySet.add(1);
+mySet.add('1');
+console.log(mySet);
+console.log(mySet.has(1)); //check an element
