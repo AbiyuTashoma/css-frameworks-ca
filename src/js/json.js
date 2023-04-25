@@ -1,7 +1,7 @@
 const myObject ={
-    name: 'Lenovo',
-    type: 'Thinkpad',
-    use: 'pc',
+    name0: 'Lenovo',
+    type0: 'Thinkpad',
+    use0: 'pc',
 }
 
 console.log("Original", myObject);
@@ -42,3 +42,18 @@ localStorage.setItem('localpet', petObj);
 const petLocal = localStorage.getItem('localpet');
 console.log(petLocal);
 console.log(JSON.parse(petLocal));
+
+//destructuring Objects: use same keys
+const { name0, type0, use0 } = myObject;
+console.log('destructuring');
+console.log(name0, type0, use0);
+
+//destructuring arrays: use variables
+const coord = [1, 2, 3, 4, 5];
+
+const [x, y] = coord;
+const [a, , b] = coord;
+const [d, e, ...remain] = coord;
+console.log(x, y);
+console.log(a, b);
+console.log(d, e, remain);
