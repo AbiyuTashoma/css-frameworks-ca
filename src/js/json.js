@@ -87,3 +87,29 @@ class Person {
 
 const aPerson = new Person('Dave', 'chappel');
 aPerson.speak();
+
+//Closure, spread
+function makeFunction(x) {
+    return function (y) {
+      return x + y;
+    };
+}
+  
+const add5 = makeFunction(5);
+console.log('Closure');
+console.log(add5(2));
+console.log(add5(5));
+
+const anObject = {
+firstName: 'Ola',
+lastName: 'Nordmann',
+};
+
+const newObject = { ...anObject };
+console.log(newObject);
+
+const array1 = [0, 1, 2];
+const array2 = [3, 4, 5];
+
+const newArray = [...array1, ...array2];
+console.log(newArray);
