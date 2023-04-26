@@ -90,3 +90,87 @@ const students = [
 
 const filteredStudents = students.filter((item) => item.mark >= 75 && item.isOnline);
 console.log(filteredStudents);
+
+//reduce
+console.log('Reduce method');
+
+//Syntax
+// const values = [100, 200, 300, 400, 500];
+
+// const endResult = values.reduce(
+//   (previousValue, currentElement, index, array) => {
+//     return previousValue;
+//   },
+// );
+
+const values = [5, 5, 5, 10];
+
+const sumOfValues = values.reduce((total, item) => (total += item));
+
+console.log(sumOfValues);
+
+const products = [
+    { title: 'Cheese', price: 15.0 },
+    { title: 'Milk', price: 8.99 },
+    { title: 'Bread', price: 22.0 },
+    { title: 'Egg', price: 5 },
+];
+
+const sum = products.reduce((subtotal, item) => (subtotal += item.price), 0);
+console.log(sum);
+
+const newProducts = [
+    { title: 'Cheese', inStock: false, quantity: 2, price: 15.0 },
+    { title: 'Milk', inStock: true, quantity: 5, price: 8.99 },
+    { title: 'Bread', inStock: true, quantity: 3, price: 22.0 },
+    { title: 'Egg', inStock: true, quantity: 12, price: 5 },
+];
+
+const subTotal = newProducts.reduce((subtotal, item) => {
+    if (item.inStock) {
+        subtotal += item.price * item.quantity;
+    }
+    return subtotal;
+
+}, 0);
+
+console.log(subTotal);
+
+const subTotalNew = newProducts.reduce(
+    (subtotal, item) => item.inStock ? (subtotal += item.quantity * item.price) : subtotal, 0);
+
+console.log(subTotalNew);
+
+const teams = [
+    {
+      name: 'Hawks',
+      score: 60,
+      isWinner: true,
+    },
+    {
+      name: 'Dolphins',
+      score: 50,
+      isWinner: true,
+    },
+    {
+      name: 'Falcons',
+      score: 90,
+      isWinner: false,
+    },
+    {
+      name: 'Bears',
+      score: 90,
+      isWinner: false,
+    },
+];
+
+const winningTeams = teams.reduce(
+    (team, item) => {
+        if (item.isWinner) {
+            team[item.name.toLowerCase()] = item.score;
+        }
+            return team;
+    }, {}
+);
+
+console.log(winningTeams);
