@@ -264,3 +264,33 @@ console.log(someValues);
 
 const everyValues = sampleValues.every((item) => item >= 4);
 console.log(everyValues);
+
+//object methods
+console.log('object methods');
+
+//for ... in 
+const person = {
+  firstName: 'Ola',
+  lastName: 'Nordmann',
+  module: 'JavaScript',
+};
+
+for (const key in person) {
+  console.log('key: ', key, 'value: ', person[key]);
+}
+
+//Object.keys(obj)
+console.log(Object.keys(person));
+
+//forEach()
+Object.keys(person).forEach((item) => console.log('key: ', item, 'value: ', person[item]));
+
+//map()
+Object.keys(person).map((item) => console.log('key: ', item, 'value: ', person[item]));
+
+//Object.values(obj)
+console.log(Object.values(person));
+
+//Object.entries(obj)
+console.log('entries:', Object.entries(person));
+Object.entries(person).forEach(([key, val]) => console.log('key: ', key, 'value: ', val));
