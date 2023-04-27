@@ -254,3 +254,13 @@ const foundToDo = todos.find(({userId, id}) => userId === 1 && id === 3);
 console.log('find', foundToDo);
 const filterToDo = todos.filter(({userId, id}) => userId === 1 && id === 3);
 console.log('filter', filterToDo);
+
+//some and every methods
+console.log('some and every methods');
+const sampleValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const someValues = sampleValues.some((item) => item >= 4);
+console.log(someValues);
+
+const everyValues = sampleValues.every((item) => item >= 4);
+console.log(everyValues);
