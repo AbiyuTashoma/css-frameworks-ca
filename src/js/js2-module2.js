@@ -88,7 +88,7 @@ const students = [
     },
 ];
 
-const filteredStudents = students.filter((item) => item.mark >= 75 && item.isOnline);
+const filteredStudents = students.filter(({mark, isOnline}) => mark >= 75 && isOnline);
 console.log(filteredStudents);
 
 //reduce
@@ -174,3 +174,83 @@ const winningTeams = teams.reduce(
 );
 
 console.log(winningTeams);
+
+//find and findIndex methods
+console.log('find and findIndex method');
+
+const users = [
+  { name: 'Kari', id: 19313 },
+  { name: 'Hans', id: 40202 },
+  { name: 'Joakim', id: 59230 },
+  { name: 'Inger', id: 14023 },
+  { name: 'Ellen', id: 76339 },
+];
+
+const foundUser = users.find(({name}) => name[0].toLowerCase() === 'h');
+
+console.log(foundUser);
+
+const findValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const foundIndex = findValues.findIndex((element) => element === 5);
+console.log(foundIndex);
+
+const findPeople = [
+  {
+    id: 0,
+    firstName: 'Ola',
+    lastName: 'Nordmann',
+  },
+  {
+    id: 1,
+    firstName: 'Kari',
+    lastName: 'Nordmann',
+  },
+  {
+    id: 2,
+    firstName: 'Nora',
+    lastName: 'Nordmann',
+  },
+];
+
+const foundPerson = findPeople.find(({id}) => id === 1);
+console.log(foundPerson)
+
+// userId: 1,
+// id: 3,
+const todos = [
+  {
+    userId: 1,
+    id: 1,
+    title: 'delectus aut autem',
+    completed: false,
+  },
+  {
+    userId: 1,
+    id: 2,
+    title: 'quis ut nam facilis et officia qui',
+    completed: false,
+  },
+  {
+    userId: 1,
+    id: 3,
+    title: 'fugiat veniam minus',
+    completed: false,
+  },
+  {
+    userId: 1,
+    id: 3,
+    title: 'et porro tempora',
+    completed: true,
+  },
+  {
+    userId: 1,
+    id: 4,
+    title: 'veniam tempora',
+    completed: true,
+  },
+];
+
+const foundToDo = todos.find(({userId, id}) => userId === 1 && id === 3);
+console.log('find', foundToDo);
+const filterToDo = todos.filter(({userId, id}) => userId === 1 && id === 3);
+console.log('filter', filterToDo);
