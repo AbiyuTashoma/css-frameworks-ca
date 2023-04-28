@@ -294,3 +294,29 @@ console.log(Object.values(person));
 //Object.entries(obj)
 console.log('entries:', Object.entries(person));
 Object.entries(person).forEach(([key, val]) => console.log('key: ', key, 'value: ', val));
+
+//Chaining
+console.log('Chaining');
+
+const DISCOUNT_PERCENTAGE = 20;
+const storeProducts = [
+  { name: 'Milk', price: 5.0, inStock: true },
+  { name: 'Cheese', price: 10.0, inStock: true },
+  { name: 'Bread', price: 8.0, inStock: false },
+  { name: 'Beans', price: 3.0, inStock: true },
+  { name: 'Eggs', price: 12.0, inStock: true },
+  { name: 'Rice', price: 4.0, inStock: false },
+  { name: 'Meat', price: 25, inStock: true },
+  { name: 'Coffee', price: 12.0, inStock: true },
+  { name: 'Tea', price: 8.0, inStock: false },
+  { name: 'Bottled Water', price: 4.0, inStock: false },
+];
+
+const discountProducts = storeProducts
+  .filter(({price, inStock}) => price >= 5 && inStock)
+  .map((item) => {item.price = item.price - item.price*DISCOUNT_PERCENTAGE/100;
+                  return item;}
+                );
+
+console.log(storeProducts);
+console.log(discountProducts);
