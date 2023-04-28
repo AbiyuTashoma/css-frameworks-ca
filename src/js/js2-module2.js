@@ -296,7 +296,7 @@ console.log('entries:', Object.entries(person));
 Object.entries(person).forEach(([key, val]) => console.log('key: ', key, 'value: ', val));
 
 //Chaining
-console.log('Chaining');
+console.log('Chaining 1');
 
 const DISCOUNT_PERCENTAGE = 20;
 const storeProducts = [
@@ -314,9 +314,33 @@ const storeProducts = [
 
 const discountProducts = storeProducts
   .filter(({price, inStock}) => price >= 5 && inStock)
-  .map((item) => {item.price = item.price - item.price*DISCOUNT_PERCENTAGE/100;
+  .map((item) => {item.discountedPrice = item.price - item.price*DISCOUNT_PERCENTAGE/100;
                   return item;}
                 );
 
 console.log(storeProducts);
 console.log(discountProducts);
+
+console.log('Chaining 2');
+const allStudents = [
+  { name: 'Victoria', age: 19, isOnline: true, results: [80, 61, 66, 50, 91] },
+  { name: 'Theo', age: 32, isOnline: false, results: [57, 99, 96, 72, 96] },
+  { name: 'Markus', age: 54, isOnline: true, results: [50, 92, 70, 66, 90] },
+  { name: 'Aksel', age: 21, isOnline: true, results: [77, 86, 70, 71, 75] },
+  { name: 'Felix', age: 29, isOnline: false, results: [99, 76, 59, 74, 68] },
+  { name: 'Benjamin', age: 48, isOnline: true, results: [65, 85, 74, 83, 54] },
+  { name: 'Ulrik', age: 39, isOnline: true, results: [92, 72, 55, 69, 58] },
+  { name: 'Alma', age: 28, isOnline: false, results: [92, 91, 66, 77, 71] },
+  { name: 'July', age: 37, isOnline: true, results: [78, 70, 59, 76, 95] },
+  { name: 'Leo', age: 42, isOnline: true, results: [55, 64, 88, 88, 95] },
+];
+
+const classAverage = allStudents
+    .filter(({age, isOnline}) => age >= 30 && isOnline)
+    .reduce((classAvg, stud, index, classArray) => {
+      const studAvg = stud.results.reduce((avg, item) => avg += item/stud.results.length, 0);
+      classAvg += studAvg/classArray.length;
+      return classAvg
+    }, 0
+    );
+console.log(classAverage);
