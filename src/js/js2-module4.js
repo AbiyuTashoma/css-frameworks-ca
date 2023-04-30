@@ -55,3 +55,13 @@ fetch(url + '/7', {
     method: 'DELETE',
 })
 .then((response) => console.log(response));
+
+//URL parameters/ Query string
+
+// const parameterString = window.location.search;
+// const searchParameter = new URLSearchParams(parameterString);
+// console.log(searchParameter);
+// console.log(searchParameter.toString());
+
+// const ID = searchParameter.get('id');
+// searchParameter.set('country', 'Norway');
