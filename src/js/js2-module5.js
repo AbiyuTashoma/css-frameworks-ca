@@ -52,3 +52,8 @@ console.log(car.firstCar);
 console.log(car.model);
 car.model = 2020;
 console.log(car.model);
+
+// IIFE
+(function () {
+    console.log('Iffy function: Immediately invoked function expression');
+})();
