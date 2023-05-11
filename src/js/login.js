@@ -9,19 +9,15 @@ const userNameContainer = document.querySelector("#email");
 const passwordContainer = document.querySelector("#password");
 
 const feedbackErrorContainer = document.querySelector(".feedback-error");
-const feedbackNameContainer = document.querySelector(".feedback-name");
-const feedbackPasswordContainer = document.querySelector(".feedback-password");
 
-const formContainer = document.querySelector(".login-form");
+const loginFormContainer = document.querySelector(".login-form");
 
 //clear error message oninput
 userNameContainer.oninput = function() {
-    clearError(feedbackNameContainer, userNameContainer);
     clearError(feedbackErrorContainer, feedbackErrorContainer);
 }
 
 passwordContainer.oninput = function () {
-    clearError(feedbackPasswordContainer, passwordContainer);
     clearError(feedbackErrorContainer, feedbackErrorContainer);
 }
 
@@ -67,4 +63,4 @@ async function loginUser (event) {
     }
 }
 
-formContainer.addEventListener("submit", loginUser);
+loginFormContainer.addEventListener("submit", loginUser);

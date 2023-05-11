@@ -14,14 +14,12 @@
                 <div class="col-10 col-sm-6 col-xl-3 mt-5">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" required>
-                    <div class="feedback-name text-danger"></div>             
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-10 col-sm-6 col-xl-3 my-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" required>
-                    <div class="feedback-password text-danger"></div> 
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -36,21 +34,24 @@
             </div>        
         </form>        
         <div class="container col-10 col-sm-6 col-xl-3">
-            <button class="form-control custom-btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#registerUser" aria-controls="registerUser" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="form-control custom-btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target=".register" aria-controls="register" aria-expanded="false" aria-label="Toggle navigation">
                 <span>Register</span>
             </button>
-            <form class="collapse" id="registerUser">
+            <form class="collapse register">
                 <div class="text-start my-3">
-                    <label for="registerName" class="form-label">Username</label>
-                    <input type="text" id="registerName" class="form-control">
+                    <label for="register-name" class="form-label">Username</label>
+                    <input type="text" id="register-name" class="form-control">
+                    <div class="note-name text-danger"></div>             
                 </div>
                 <div class="text-start my-3">
-                    <label for="registerEmail" class="form-label">Email</label>
-                    <input type="email" id="registerEmail" class="form-control">
+                    <label for="register-email" class="form-label">Email</label>
+                    <input type="email" id="register-email" class="form-control">
+                    <div class="note-email text-danger"></div>             
                 </div>
                 <div class="text-start my-3">
-                    <label for="registerPassword" class="form-label">Create password</label>
-                    <input type="password" id="registerPassword" class="form-control">
+                    <label for="register-password" class="form-label">Create password</label>
+                    <input type="password" id="register-password" class="form-control">
+                    <div class="note-password text-danger"></div>             
                 </div>
                 <div class="row justify-content-center my-2">
                     <div class="row col-10 col-sm-6 col-xl-6">
@@ -61,8 +62,8 @@
         </div>
 
         <script src="src/js/components/validate.js"></script>
-        <script src="src/js/authenticate.js"></script>
         <script src="src/js/login.js"></script>
+        <script src="src/js/register.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
