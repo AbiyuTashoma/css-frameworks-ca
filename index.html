@@ -24,7 +24,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-10 col-sm-6 col-xl-3">
-                    <div class="feedback-error text-danger mb-3"></div>
+                    <div class="feedback-error mb-3"></div>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -38,20 +38,21 @@
                 <span>Register</span>
             </button>
             <form class="collapse register">
+                    <div class="feedback-success my-2"></div>
                 <div class="text-start my-3">
                     <label for="register-name" class="form-label">Username</label>
                     <input type="text" id="register-name" class="form-control">
-                    <div class="note-name text-danger"></div>             
+                    <div class="note-name"></div>             
                 </div>
                 <div class="text-start my-3">
                     <label for="register-email" class="form-label">Email</label>
                     <input type="email" id="register-email" class="form-control">
-                    <div class="note-email text-danger"></div>             
+                    <div class="note-email"></div>             
                 </div>
                 <div class="text-start my-3">
                     <label for="register-password" class="form-label">Create password</label>
                     <input type="password" id="register-password" class="form-control">
-                    <div class="note-password text-danger"></div>             
+                    <div class="note-password"></div>             
                 </div>
                 <div class="row justify-content-center my-2">
                     <div class="row col-10 col-sm-6 col-xl-6">
@@ -62,6 +63,7 @@
         </div>
 
         <script src="src/js/components/validate.js"></script>
+        <script src="src/js/components/displayMessage.js"></script>
         <script src="src/js/login.js"></script>
         <script src="src/js/register.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

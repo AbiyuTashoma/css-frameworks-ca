@@ -14,13 +14,17 @@ const loginFormContainer = document.querySelector(".login-form");
 
 //clear error message oninput
 userNameContainer.oninput = function() {
-    clearError(feedbackErrorContainer, feedbackErrorContainer);
+    clearFeedback(feedbackErrorContainer, feedbackErrorContainer);
 }
 
 passwordContainer.oninput = function () {
-    clearError(feedbackErrorContainer, feedbackErrorContainer);
+    clearFeedback(feedbackErrorContainer, feedbackErrorContainer);
 }
 
+/**
+ * authenticates and logs in user
+ * @param {event} event 
+ */
 async function loginUser (event) {
 
     event.preventDefault();
@@ -51,7 +55,7 @@ async function loginUser (event) {
 
         else {
             console.log('Invalid email or password');
-            setError(feedbackErrorContainer, feedbackErrorContainer, 'Invalid email or password');
+            setFeedback(feedbackErrorContainer, feedbackErrorContainer, 'Invalid email or password', "text-danger");
         }
 
         console.log(json);

@@ -4,7 +4,8 @@ const registerPasswordContainer = document.querySelector("#register-password");
 
 const noteNameContainer = document.querySelector(".note-name");
 const noteEmailContainer = document.querySelector(".note-email");
-const notePasswordContainer = document.querySelector(".note-password")
+const notePasswordContainer = document.querySelector(".note-password");
+const successContainer = document.querySelector(".feedback-success");
 
 const registerFormContainer = document.querySelector(".register");
 
@@ -12,51 +13,50 @@ const registerURL = BASE_URL + '/auth/register';
 
 //Clear error oninput
 registerNameContainer.oninput = function() {
-    clearError(noteNameContainer, registerNameContainer);
+    clearFeedback(noteNameContainer, registerNameContainer);
 }
 registerEmailContainer.oninput = function() {
-    clearError(noteEmailContainer, registerEmailContainer);
+    clearFeedback(noteEmailContainer, registerEmailContainer);
 }
 registerPasswordContainer.oninput = function() {
-    clearError(notePasswordContainer, registerPasswordContainer);
+    clearFeedback(notePasswordContainer, registerPasswordContainer);
 }
 
 //validate input
+/**
+ * validates registration values
+ * @param {event} event 
+ */
 function validate(event) {
 
     event.preventDefault();
 
-    let validLogin = true;
+    let validRegister = true;
 
     const userName = registerNameContainer.value;
     const email = registerEmailContainer.value;
     const password = registerPasswordContainer.value;
-
-    // console.log('name '+userName)
-    // console.log('email '+email)
-    // console.log('password '+password)
 
     const validName = validateText(userName, 5);
     const validEmail = validateEmail(email);
     const validPassword = validateText(password, 8);
 
     if (!validName) {
-        validLogin = false;
-        setError(noteNameContainer, registerNameContainer, "Username should atleast be 5 characters");
+        validRegister = false;
+        setFeedback(noteNameContainer, registerNameContainer, "Username should atleast be 5 characters", "text-danger");
     }
 
     if (!validEmail) {
-        validLogin = false;
-        setError(noteEmailContainer, registerEmailContainer, "Enter valid email");
+        validRegister = false;
+        setFeedback(noteEmailContainer, registerEmailContainer, "Enter valid email", "text-danger");
     }
 
     if (!validPassword) {
-        validLogin = false;
-        setError(notePasswordContainer, registerPasswordContainer, "Password should atleast be 8 characters");
+        validRegister = false;
+        setFeedback(notePasswordContainer, registerPasswordContainer, "Password should atleast be 8 characters", "text-danger");
     }
 
-    if (validLogin) {
-        
+    if (validRegister) {
 
         const registerData = {
             "username": `${userName}`,
@@ -73,10 +73,16 @@ function validate(event) {
         }
 
         registerUser(registerOption);
+        setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
+        registerFormContainer.reset();
     }
 
 }
 
+/**
+ * Registers user
+ * @param {Request} option user data
+ */
 async function registerUser (option) {
 
     console.log(option);
