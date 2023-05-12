@@ -1,5 +1,5 @@
 /**
- * Displays error message and highlights error field
+ * Displays message and highlights error field
  * @param {HTMLElement} noteContainer 
  * @param {HTMLElement} inputContainer 
  * @param {Text} errorMessage 
@@ -10,7 +10,7 @@ function setFeedback(noteContainer, inputContainer, errorMessage, type) {
 }
 
 /**
- * Clears error message and border highlight
+ * Clears message and border highlight
  * @param {HTMLElement} noteContainer 
  * @param {HTMLElement} inputContainer 
  */

@@ -14,12 +14,15 @@ const registerURL = BASE_URL + '/auth/register';
 //Clear error oninput
 registerNameContainer.oninput = function() {
     clearFeedback(noteNameContainer, registerNameContainer);
+    clearFeedback(successContainer, successContainer);
 }
 registerEmailContainer.oninput = function() {
     clearFeedback(noteEmailContainer, registerEmailContainer);
+    clearFeedback(successContainer, successContainer);
 }
 registerPasswordContainer.oninput = function() {
     clearFeedback(notePasswordContainer, registerPasswordContainer);
+    clearFeedback(successContainer, successContainer);
 }
 
 //validate input
@@ -43,7 +46,7 @@ function validate(event) {
 
     if (!validName) {
         validRegister = false;
-        setFeedback(noteNameContainer, registerNameContainer, "Username should atleast be 5 characters", "text-danger");
+        setFeedback(noteNameContainer, registerNameContainer, "Username should be between 5 and 20 characters", "text-danger");
     }
 
     if (!validEmail) {
@@ -59,7 +62,7 @@ function validate(event) {
     if (validRegister) {
 
         const registerData = {
-            "username": `${userName}`,
+            "name": `${userName}`,
             "email": `${email}`,
             "password": `${password}`, //"theusualcode"
         };
@@ -73,10 +76,7 @@ function validate(event) {
         }
 
         registerUser(registerOption);
-        setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
-        registerFormContainer.reset();
     }
-
 }
 
 /**
@@ -85,7 +85,25 @@ function validate(event) {
  */
 async function registerUser (option) {
 
-    console.log(option);
+    // console.log(option);
+    try {
+        const response = await fetch(registerURL, option);
+        const json = await response.json();
+        console.log(json);
+        if (json.statuCode === 200) {
+            setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
+            registerFormContainer.reset();
+        }
+        else {
+            console.log(json.errors[0]['message']);
+            setFeedback(successContainer, successContainer, json.errors[0]['message'], "text-danger");
+        }
+    }
+     catch(error) {
+        setFeedback(successContainer, successContainer, "Unknown error, please try again", "text-danger");
+        console.log(error);
+        console.log("failed");
+     }
     
 }
 

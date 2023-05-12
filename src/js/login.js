@@ -1,9 +1,5 @@
 const BASE_URL = 'https://nf-api.onrender.com/api/v1/social';
-
-//Endpoints
-// const registerURL = BASE_URL + '/auth/register';
 const loginURL = BASE_URL + '/auth/login';
-//Get: /posts
 
 const userNameContainer = document.querySelector("#email");
 const passwordContainer = document.querySelector("#password");
@@ -62,6 +58,7 @@ async function loginUser (event) {
     }
 
     catch (error) {
+        setFeedback(feedbackErrorContainer, feedbackErrorContainer, 'Invalid email or password', "text-danger");
         console.log(error);
         console.log('failed');
     }
