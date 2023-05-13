@@ -30,12 +30,18 @@
             </button>
             <form class="collapse" id="createContent">
                 <div class="input-group my-2">
+                    <input type="text" class="form-control" aria-label="Add title" placeholder="Title">
+                </div>
+                <div class="input-group my-2">
                     <textarea class="form-control" aria-label="Add text content" placeholder="Text content"></textarea>
                 </div>
-                <div class="input-group">
+                <div type="url" class="input-group my-2">
+                    <input class="form-control" aria-label="Add media url" placeholder="Media url">
+                </div>
+                <!-- <div class="input-group">
                     <label for="upload-content" class="input-group-text">Upload image</label>
                     <input type="file" class="form-control">
-                </div>
+                </div> -->
                 <div class="row justify-content-center mt-2">
                     <div class="row col-10 col-sm-6 col-xl-3">
                         <input type="submit" class="custom-btn btn-primary" value="Post"></button>
@@ -51,7 +57,8 @@
                 </a>
             </div>
             <div class="my-2">
-                <img src="src/Image/content/frog-g7cd1b58cf_640.jpg" alt="frog modeling" class="col-12">
+                <!-- <img src="src/Image/content/frog-g7cd1b58cf_640.jpg" alt="frog modeling" class="col-12"> -->
+                <iframe src="https://www.youtube.com/embed/kXp7gAiF-cc" class="col-12" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="row">
 
@@ -84,7 +91,8 @@
                 </a>
             </div>
             <div class="my-2">
-                <img src="src/Image/content/banana-dolphin-g92f80cef5_640.jpg" alt="fruit" class="col-12">
+                <!-- <img src="src/Image/content/banana-dolphin-g92f80cef5_640.jpg" alt="fruit" class="col-12"> -->
+                <img src="https://imgtr.ee/images/2023/05/13/lzfmU.jpg" alt="fruit" class="col-12">
             </div>
             <div class="row">
                 <img src="src/Image/icons/comment-dots.png" class="post-icon" alt="comment">
@@ -110,5 +118,6 @@
         </div>    
 
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="src/js/feed.js"></script>
     </body>
 </html>

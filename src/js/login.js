@@ -46,6 +46,7 @@ async function loginUser (event) {
         const json = await response.json();
         if (json.accessToken) {
             console.log('Login successful');
+            localStorage.setItem('accessToken', json.accessToken);
             window.open("feed.html", '_self');
         }
 
@@ -54,7 +55,7 @@ async function loginUser (event) {
             setFeedback(feedbackErrorContainer, feedbackErrorContainer, 'Invalid email or password', "text-danger");
         }
 
-        console.log(json);
+        // console.log(json);
     }
 
     catch (error) {
