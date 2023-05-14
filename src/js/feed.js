@@ -1,9 +1,10 @@
 const BASE_URL = 'https://nf-api.onrender.com/api/v1/social';
-const feedURL = BASE_URL + '/posts?';
-const feedLimit = feedURL + 'limit=20';
+const feedURL = BASE_URL + '/posts';
+const feedLimit = feedURL + '?limit=20';
+const feedTag = feedURL + '?_tag=SoMeABT';
 //GET
 const accessToken = localStorage.getItem('accessToken');
-console.log(accessToken);
+// console.log(accessToken);
 
 const feedOption = {
     method: 'GET',
@@ -15,7 +16,7 @@ const feedOption = {
 
 async function getFeed() {
     try {
-        const response = await fetch(feedLimit, feedOption);
+        const response = await fetch(feedTag, feedOption);
         const json = await response.json();
 
         console.log(json);
