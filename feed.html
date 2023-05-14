@@ -30,8 +30,9 @@
             </button>
             <form class="collapse" id="createContent">
                 <div class="input-group my-2">
-                    <input type="text" id="post-title" class="form-control" aria-label="Add title" placeholder="Title" required>
+                    <input type="text" id="post-title" class="form-control" aria-label="Add title" placeholder="Title">
                 </div>
+                <div class="note-title mb-3"></div>             
                 <div class="input-group my-2">
                     <textarea id="post-body" class="form-control" aria-label="Add text content" placeholder="Text content"></textarea>
                 </div>
@@ -118,6 +119,8 @@
         </div>    
 
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="src/js/components/validate.js"></script>
+        <script src="src/js/components/displayMessage.js"></script>
         <script src="src/js/feed.js"></script>
         <script src="src/js/post.js"></script>
     </body>
