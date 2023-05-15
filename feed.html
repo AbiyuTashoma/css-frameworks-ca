@@ -4,124 +4,126 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="dist/css/index.css">
+        <link rel="stylesheet" href="/dist/css/index.css">
         <title>posts feed</title>
     </head>
-    <body class="bg-light" style="overflow: hidden;">
-        <div class="d-flex justify-content-center my-3" style="height: 60px;">
-            <img src="src/Image/icons/SoMeLogo.png" alt="SoMe logo">
-        </div>
-        <div class="container col-12 col-sm-8 col-xl-6">
-            <div class="row my-3">
-                <div class="input-group col me-3">
-                    <label class="input-group-text" for="orderby">Order by</label>
-                    <select class="form-select" id="orderby">
-                        <option value="date">Latest</option>
-                        <option value="popular">Popular</option>
-                        <option value="trending">Trending</option>
-                    </select>
-                </div>
-                <div class="input-group col">
-                    <label class="input-group-text" for="search">Search</label>
-                    <input type="search" class="form-control" id="search">
-                </div>
+    <body class="bg-light">
+        <main>
+            <div class="d-flex justify-content-center my-3" style="height: 60px;">
+                <img src="src/image/icons/SoMeLogo.png" alt="SoMe logo">
             </div>
-        </div>
-        <div class="container mb-5 col-12 col-sm-8 col-xl-6">
-            <button class="form-control custom-btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#createContent" aria-controls="createContent" aria-expanded="false" aria-label="Toggle create post">
-                <span>Create post +</span>
-            </button>
-            <form class="collapse" id="createContent">
-                <div class="input-group my-2">
-                    <input type="text" id="post-title" class="form-control" aria-label="Add title" placeholder="Title">
-                </div>
-                <div class="note-title mb-3"></div>             
-                <div class="input-group my-2">
-                    <textarea id="post-body" class="form-control" aria-label="Add text content" placeholder="Text content"></textarea>
-                </div>
-                <div type="url" class="input-group my-2">
-                    <input id="post-media" class="form-control" aria-label="Add media url" placeholder="Media url">
-                </div>
-                <!-- <div class="input-group">
-                    <label for="upload-content" class="input-group-text">Upload image</label>
-                    <input type="file" class="form-control">
-                </div> -->
-                <div class="row justify-content-center mt-2">
-                    <div class="row col-10 col-sm-6 col-xl-3">
-                        <input type="submit" id="post-btn" class="custom-btn btn-primary" value="Post"></button>
+            <div class="container col-12 col-sm-8 col-xl-6">
+                <div class="row my-3">
+                    <div class="input-group col me-3">
+                        <label class="input-group-text" for="orderby">Order by</label>
+                        <select class="form-select" id="orderby">
+                            <option value="date">Latest</option>
+                            <option value="popular">Popular</option>
+                            <option value="trending">Trending</option>
+                        </select>
+                    </div>
+                    <div class="input-group col">
+                        <label class="input-group-text" for="search">Search</label>
+                        <input type="search" class="form-control" id="search">
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="container mb-5 col-12 col-sm-8 col-xl-6">
-            <div class="d-flex align-items-center">
-                <a href="profile.html" class="text-decoration-none text-dark">
-                    <img src="src/Image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
-                    <span>Profile Name</span>
-                </a>
             </div>
-            <div class="my-2">
-                <img src="src/Image/content/frog-g7cd1b58cf_640.jpg" alt="frog modeling" class="col-12">
-                <!-- <iframe src="https://www.youtube.com/embed/kXp7gAiF-cc" class="col-12" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+            <div class="container mb-5 col-12 col-sm-8 col-xl-6">
+                <button class="form-control custom-btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#createContent" aria-controls="createContent" aria-expanded="false" aria-label="Toggle create post">
+                    <span>Create post +</span>
+                </button>
+                <form class="collapse" id="createContent">
+                    <div class="input-group my-2">
+                        <input type="text" id="post-title" class="form-control" aria-label="Add title" placeholder="Title">
+                    </div>
+                    <div class="note-title mb-3"></div>             
+                    <div class="input-group my-2">
+                        <textarea id="post-body" class="form-control" aria-label="Add text content" placeholder="Text content"></textarea>
+                    </div>
+                    <div type="url" class="input-group my-2">
+                        <input id="post-media" class="form-control" aria-label="Add media url" placeholder="Media url">
+                    </div>
+                    <!-- <div class="input-group">
+                        <label for="upload-content" class="input-group-text">Upload image</label>
+                        <input type="file" class="form-control">
+                    </div> -->
+                    <div class="row justify-content-center mt-2">
+                        <div class="row col-10 col-sm-6 col-xl-3">
+                            <input type="submit" id="post-btn" class="custom-btn btn-primary" value="Post"></button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="row">
+            <div class="container mb-5 col-12 col-sm-8 col-xl-6">
+                <div class="d-flex align-items-center">
+                    <a href="profile.html" class="text-decoration-none text-dark">
+                        <img src="src/image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
+                        <span>Profile Name</span>
+                    </a>
+                </div>
+                <div class="my-2">
+                    <img src="src/image/content/frog-g7cd1b58cf_640.jpg" alt="frog modeling" class="col-12">
+                    <!-- <iframe src="https://www.youtube.com/embed/kXp7gAiF-cc" class="col-12" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                </div>
+                <div class="row">
 
-                <img src="src/Image/icons/comment-dots.png" class="post-icon" alt="comment">
-                <img src="src/Image/icons/share.png" class="post-icon" alt="share">
-                <img src="src/Image/icons/heart.png" class="post-icon" alt="like">
+                    <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
+                    <img src="src/image/icons/share.png" class="post-icon" alt="share">
+                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                </div>
             </div>
-        </div>
-        <div class="container my-5 col-12 col-sm-8 col-xl-6">
-            <div class="d-flex align-items-center gap-2">
-                <a href="profile.html" class="text-decoration-none text-dark">
-                    <img src="src/Image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
-                    <span>Profile Name</span>
-                </a>
+            <div class="container my-5 col-12 col-sm-8 col-xl-6">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="profile.html" class="text-decoration-none text-dark">
+                        <img src="src/image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
+                        <span>Profile Name</span>
+                    </a>
+                </div>
+                <div class="my-2">
+                    <p class="flex-fill">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="row">
+                    <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
+                    <img src="src/image/icons/share.png" class="post-icon" alt="share">
+                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                </div>
             </div>
-            <div class="my-2">
-                <p class="flex-fill">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="container my-5 col-12 col-sm-8 col-xl-6">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="profile.html" class="text-decoration-none text-dark">
+                        <img src="src/image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
+                        <span>Profile Name</span>
+                    </a>
+                </div>
+                <div class="my-2">
+                    <!-- <img src="src/image/content/banana-dolphin-g92f80cef5_640.jpg" alt="fruit" class="col-12"> -->
+                    <img src="https://imgtr.ee/images/2023/05/13/lzfmU.jpg" alt="fruit" class="col-12">
+                </div>
+                <div class="row">
+                    <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
+                    <img src="src/image/icons/share.png" class="post-icon" alt="share">
+                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                </div>
             </div>
-            <div class="row">
-                <img src="src/Image/icons/comment-dots.png" class="post-icon" alt="comment">
-                <img src="src/Image/icons/share.png" class="post-icon" alt="share">
-                <img src="src/Image/icons/heart.png" class="post-icon" alt="like">
+            <div class="container my-5 col-12 col-sm-8 col-xl-6">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="profile.html" class="text-decoration-none text-dark">
+                        <img src="src/image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
+                        <span>Profile Name</span>
+                    </a>
+                </div>
+                <div class="my-2">
+                    <img src="src/image/content/give-me-a-break-gf6cd2c4b2_640.png" alt="post it" class="col-12">
+                </div>
+                <div class="row">
+                    <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
+                    <img src="src/image/icons/share.png" class="post-icon" alt="share">
+                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                </div>
             </div>
-        </div>
-        <div class="container my-5 col-12 col-sm-8 col-xl-6">
-            <div class="d-flex align-items-center gap-2">
-                <a href="profile.html" class="text-decoration-none text-dark">
-                    <img src="src/Image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
-                    <span>Profile Name</span>
-                </a>
-            </div>
-            <div class="my-2">
-                <!-- <img src="src/Image/content/banana-dolphin-g92f80cef5_640.jpg" alt="fruit" class="col-12"> -->
-                <img src="https://imgtr.ee/images/2023/05/13/lzfmU.jpg" alt="fruit" class="col-12">
-            </div>
-            <div class="row">
-                <img src="src/Image/icons/comment-dots.png" class="post-icon" alt="comment">
-                <img src="src/Image/icons/share.png" class="post-icon" alt="share">
-                <img src="src/Image/icons/heart.png" class="post-icon" alt="like">
-            </div>
-        </div>
-        <div class="container my-5 col-12 col-sm-8 col-xl-6">
-            <div class="d-flex align-items-center gap-2">
-                <a href="profile.html" class="text-decoration-none text-dark">
-                    <img src="src/Image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
-                    <span>Profile Name</span>
-                </a>
-            </div>
-            <div class="my-2">
-                <img src="src/Image/content/give-me-a-break-gf6cd2c4b2_640.png" alt="post it" class="col-12">
-            </div>
-            <div class="row">
-                <img src="src/Image/icons/comment-dots.png" class="post-icon" alt="comment">
-                <img src="src/Image/icons/share.png" class="post-icon" alt="share">
-                <img src="src/Image/icons/heart.png" class="post-icon" alt="like">
-            </div>
-        </div>    
+        </main>  
 
-        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="src/js/components/validate.js"></script>
         <script src="src/js/components/displayMessage.js"></script>
         <script src="src/js/feed.js"></script>
