@@ -8,7 +8,11 @@ const noteTitleContainer = document.querySelector('.note-title');
 // const BASE_URL = 'https://nf-api.onrender.com/api/v1/social';
 const postURL = BASE_URL + '/posts';
 
-async function postPost(event) {
+/**
+ * creates a content post from the form fields
+ * @param {event} event 
+ */
+async function createPost(event) {
     event.preventDefault();
 
     const postTitle = postTitleContainer.value;
@@ -38,21 +42,13 @@ async function postPost(event) {
             },
         }
 
-        try {
-            const response = await fetch (postURL, postOption);
-            const json = await response.json();
-            console.log(json);
-        }
-
-        catch(error) {
-            console.log(error);
-        }
+        apiRequest (postURL, postOption);
+        // based on result display success/fail feedback
     }
-    
 }
 
 postTitleContainer.oninput = function() {
     clearFeedback(noteTitleContainer, postTitleContainer);
 }
 
-postFormContainer.addEventListener('submit', postPost);
+postFormContainer.addEventListener('submit', createPost);
