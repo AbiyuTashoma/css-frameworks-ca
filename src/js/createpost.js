@@ -5,6 +5,8 @@ const postBtnContainer = document.querySelector('#post-btn');
 const postFormContainer = document.querySelector('#createContent');
 const noteTitleContainer = document.querySelector('.note-title');
 
+const notePostContainer = document.querySelector(".note-post");
+
 // const BASE_URL = 'https://nf-api.onrender.com/api/v1/social';
 const postURL = BASE_URL + '/posts';
 
@@ -42,8 +44,16 @@ async function createPost(event) {
             },
         }
 
-        apiRequest (postURL, postOption);
-        // based on result display success/fail feedback
+        const postResponse = await apiRequest (postURL, postOption);
+        // Display success/fail feedback
+        // Refresh feed page
+        if (postResponse['json']['title']) {
+            postFormContainer.reset();
+            postFormContainer.className = "collapse";
+            setFeedback(notePostContainer, notePostContainer, "Post successful!", "text-success");
+            setTimeout(clearFeedback, 5000, notePostContainer, notePostContainer);
+            feed();
+        }
     }
 }
 

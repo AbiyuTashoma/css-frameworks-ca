@@ -17,10 +17,17 @@ const feedOption = {
     },
 };
 
-async function result () {
+async function feed() {
     const apiJson = await apiRequest(feedTag, feedOption);
-    feedContainer.innerHTML = createHtml (apiJson['json']);
-    console.log('async', apiJson['json']);
+    if (apiJson['json']) {
+        feedContainer.innerHTML = createHtml (apiJson['json']);
+        console.log('async', apiJson['json']);
+    }
+
+    if (apiJson['error']) {
+        console.log('error', apiJson['error']);
+    }
+    
 }
 
-result();
+feed();

@@ -1,6 +1,6 @@
 /**
- * creates html object from json array
- * @param {Array} jasonArray 
+ * creates html object from json objects
+ * @param {object} jasonArray 
  * @returns html object
  */
 function createHtml (jasonArray) {

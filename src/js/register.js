@@ -30,7 +30,7 @@ registerPasswordContainer.oninput = function() {
  * validates registration values
  * @param {event} event 
  */
-function validate(event) {
+async function validate(event) {
 
     event.preventDefault();
 
@@ -76,6 +76,21 @@ function validate(event) {
         }
 
         registerUser(registerOption);
+
+        //refactoring register user
+        // const registerResponse = await apiRequest (registerURL, registerOption);
+        // if (registerResponse['json'].statusCode === 200 || registerResponse['json'].statusCode === 201) {
+        //     setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
+        //     registerFormContainer.reset();
+        //     registerFormContainer.className = "collapse";
+        // }
+        // if (registerResponse['json'].errors[0]) {
+        //     console.log(registerResponse['json'].errors[0]['message']);
+        //     setFeedback(successContainer, successContainer, registerResponse['json'].errors[0]['message'], "text-danger");
+        // }
+        // if (registerResponse['error']) {
+        //     setFeedback(successContainer, successContainer, "Unknown error, please try again", "text-danger");
+        // }
     }
 }
 
@@ -90,7 +105,7 @@ async function registerUser (option) {
         const response = await fetch(registerURL, option);
         const json = await response.json();
         console.log(json);
-        if (json.statuCode === 200) {
+        if (json.statusCode === 200) {
             setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
             registerFormContainer.reset();
         }
