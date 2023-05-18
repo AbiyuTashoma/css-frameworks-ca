@@ -27,7 +27,6 @@ async function feed() {
     if (apiJson['error']) {
         console.log('error', apiJson['error']);
     }
-    
 }
 
 feed();

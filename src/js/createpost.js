@@ -45,14 +45,16 @@ async function createPost(event) {
         }
 
         const postResponse = await apiRequest (postURL, postOption);
-        // Display success/fail feedback
-        // Refresh feed page
+
         if (postResponse['json']['title']) {
             postFormContainer.reset();
             postFormContainer.className = "collapse";
             setFeedback(notePostContainer, notePostContainer, "Post successful!", "text-success");
             setTimeout(clearFeedback, 5000, notePostContainer, notePostContainer);
             feed();
+        }
+        else {
+            setFeedback(notePostContainer, notePostContainer, "Posting failed, try again!", "text-danger");
         }
     }
 }

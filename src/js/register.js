@@ -7,7 +7,7 @@ const noteEmailContainer = document.querySelector(".note-email");
 const notePasswordContainer = document.querySelector(".note-password");
 const successContainer = document.querySelector(".feedback-success");
 
-const registerFormContainer = document.querySelector(".register");
+const registerFormContainer = document.querySelector("#register");
 
 const registerURL = BASE_URL + '/auth/register';
 
@@ -27,7 +27,7 @@ registerPasswordContainer.oninput = function() {
 
 //validate input
 /**
- * validates registration values
+ * validates registration details
  * @param {event} event 
  */
 async function validate(event) {
@@ -75,51 +75,25 @@ async function validate(event) {
             },
         }
 
-        registerUser(registerOption);
-
-        //refactoring register user
-        // const registerResponse = await apiRequest (registerURL, registerOption);
-        // if (registerResponse['json'].statusCode === 200 || registerResponse['json'].statusCode === 201) {
-        //     setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
-        //     registerFormContainer.reset();
-        //     registerFormContainer.className = "collapse";
-        // }
-        // if (registerResponse['json'].errors[0]) {
-        //     console.log(registerResponse['json'].errors[0]['message']);
-        //     setFeedback(successContainer, successContainer, registerResponse['json'].errors[0]['message'], "text-danger");
-        // }
-        // if (registerResponse['error']) {
-        //     setFeedback(successContainer, successContainer, "Unknown error, please try again", "text-danger");
-        // }
-    }
-}
-
-/**
- * Registers user
- * @param {Request} option user data
- */
-async function registerUser (option) {
-
-    // console.log(option);
-    try {
-        const response = await fetch(registerURL, option);
-        const json = await response.json();
-        console.log(json);
-        if (json.statusCode === 200) {
-            setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
-            registerFormContainer.reset();
+        const registerResponse = await apiRequest (registerURL, registerOption);
+        console.log(registerResponse);
+        
+        if (registerResponse['output'] == 'json') {
+            if (registerResponse['json']['id']) {
+                setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
+                registerFormContainer.reset();
+                registerFormContainer.className = "collapse";
+            }
+            else if (registerResponse['json']['errors'][0]) {
+                console.log(registerResponse['json']['errors'][0]['message']);
+                setFeedback(successContainer, successContainer, registerResponse['json'].errors[0]['message'], "text-danger");
+            }
         }
-        else {
-            console.log(json.errors[0]['message']);
-            setFeedback(successContainer, successContainer, json.errors[0]['message'], "text-danger");
+        
+        if (registerResponse['output'] == 'error') {
+            setFeedback(successContainer, successContainer, "Unknown error, please try again", "text-danger");
         }
     }
-     catch(error) {
-        setFeedback(successContainer, successContainer, "Unknown error, please try again", "text-danger");
-        console.log(error);
-        console.log("failed");
-     }
-    
 }
 
 registerFormContainer.addEventListener("submit", validate);

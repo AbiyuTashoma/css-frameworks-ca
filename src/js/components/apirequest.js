@@ -9,11 +9,11 @@ async function apiRequest(apiURL, requestOption) {
         const json = await response.json();
 
         // console.log(json);
-        return {'json': json};
+        return {'output': 'json', 'json': json};
     }
 
     catch (error) {
         // console.log(error);
-        return {'error': error};
+        return {'output': 'error', 'error': error};
     }
 }
