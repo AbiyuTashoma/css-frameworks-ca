@@ -9,6 +9,15 @@ profile = {
         "password": "theusualcode"
     };
 
+    ||
+    vv
+    
+profile = { 
+        name: "profile9", 
+        email: "profile_name9@stud.noroff.no",
+        "password": "theusualcode"
+    };
+
 https://imgtr.ee/
 banana: https://imgtr.ee/images/2023/05/13/lzfmU.jpg
 youtube video: https://youtu.be/zGLLXqVUHD8
