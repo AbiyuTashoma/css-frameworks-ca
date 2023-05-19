@@ -14,8 +14,8 @@
             </div>
             <div class="container col-12 col-sm-8 col-xl-6">
                 <div class="row my-3">
-                    <div class="input-group col me-3">
-                        <label class="input-group-text" for="orderby">Order by</label>
+                    <div class="input-group col">
+                        <!-- <label class="input-group-text" for="orderby">Order by</label> -->
                         <select class="form-select" id="orderby">
                             <option value="date">Latest</option>
                             <option value="popular">Popular</option>
@@ -28,8 +28,8 @@
                     </div>
                 </div>
             </div>
-            <div class="container mb-3 col-12 col-sm-8 col-xl-6">
-                <button class="form-control custom-btn btn-outline-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#createContent" aria-controls="createContent" aria-expanded="false" aria-label="Toggle create post">
+            <div class="container col-12 col-sm-8 col-xl-6">
+                <button class="form-control custom-btn btn-outline-primary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#createContent" aria-controls="createContent" aria-expanded="false" aria-label="Toggle create post">
                     <span>Create post +</span>
                 </button>
                 <div class="note-post"></div>             
@@ -37,12 +37,12 @@
                     <div class="input-group my-2">
                         <input type="text" id="post-title" class="form-control" aria-label="Add title" placeholder="Title">
                     </div>
-                    <div class="note-title mb-3"></div>             
+                    <div class="note-title mb-2"></div>             
                     <div class="input-group my-2">
                         <textarea id="post-body" class="form-control" aria-label="Add text content" placeholder="Text content"></textarea>
                     </div>
                     <div type="url" class="input-group my-2">
-                        <input id="post-media" class="form-control" aria-label="Add media url" placeholder="Media url">
+                        <input id="post-media" class="form-control" aria-label="Add media url" placeholder="Image url">
                     </div>
                     <div class="row justify-content-center mt-2">
                         <div class="row col-10 col-sm-6 col-xl-3">
