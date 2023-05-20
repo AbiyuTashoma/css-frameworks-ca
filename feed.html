@@ -9,9 +9,29 @@
     </head>
     <body class="bg-light">
         <main>
-            <div class="d-flex justify-content-center my-3" style="height: 60px;">
-                <img src="src/image/icons/SoMeLogo.png" alt="SoMe logo">
-            </div>
+            <nav class="container navbar navbar-expand-lg bg-light col-12 col-sm-8 col-xl-6">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <div class="d-flex justify-content-end align-items-center gap-2">
+                            <span class="navbar-toggler-icon"></span>
+                            <img src="src/image/icons/SoMeLogo.png" alt="SoMe logo" style="height: 40px;">
+                        </div>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="feed.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="profile.html">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <div class="container col-12 col-sm-8 col-xl-6">
                 <div class="row my-3">
                     <div class="input-group col">
@@ -32,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container col-12 col-sm-8 col-xl-6">
+            <div class="container col-12 col-sm-8 col-xl-6 sticky-top bg-light">
                 <button class="form-control custom-btn btn-outline-primary mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#createContent" aria-controls="createContent" aria-expanded="false" aria-label="Toggle create post">
                     <span>Create post +</span>
                 </button>
