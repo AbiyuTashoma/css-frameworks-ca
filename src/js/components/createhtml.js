@@ -18,6 +18,7 @@ function createHtml (jasonArray) {
             <div class="my-2">
                 <p class="flex-fill">${jasonArray[i]['title']}</p>
                 <p class="flex-fill">${jasonArray[i]['body']}</p>
+                <img src="${jasonArray[i]['media']}" class="col-12">
             </div>
             <div class="row">
                 <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
