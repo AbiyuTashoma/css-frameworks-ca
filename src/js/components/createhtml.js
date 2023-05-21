@@ -15,10 +15,23 @@ function createHtml (jasonArray) {
                     <span>Profile Name</span>
                 </a>
             </div>
-            <div class="my-2">
-                <p class="flex-fill">${jasonArray[i]['title']}</p>
-                <p class="flex-fill">${jasonArray[i]['body']}</p>
-                <img src="${jasonArray[i]['media']}" class="col-12">
+            <a class="btn p-0 my-2" data-bs-toggle="modal" data-bs-target="#modal${i}">
+                <div class="my-2">
+                    <p class="flex-fill">${jasonArray[i]['title']}</p>
+                    <p class="flex-fill">${jasonArray[i]['body']}</p>
+                    <img src="${jasonArray[i]['media']}" class="col-12">
+                </div>
+            </a>
+            <div class="modal" id="modal${i}" tabindex="-1" aria-labelledby="exmodal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body p-3">
+                            <p class="flex-fill">${jasonArray[i]['title']}</p>
+                            <p class="flex-fill">${jasonArray[i]['body']}</p>
+                            <img src="${jasonArray[i]['media']}" class="col-12">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
