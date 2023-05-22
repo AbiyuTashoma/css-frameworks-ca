@@ -45,12 +45,18 @@ async function createPost(event) {
 
         const postResponse = await apiRequest (postURL, postOption);
 
-        if (postResponse['json']['title']) {
-            postFormContainer.reset();
-            postFormContainer.className = "collapse";
-            setFeedback(notePostContainer, notePostContainer, "Post successful!", "text-success");
-            setTimeout(clearFeedback, 5000, notePostContainer, notePostContainer);
-            feed();
+        console.log(postResponse);
+        if (postResponse['output'] == 'json') {
+            if (postResponse['json']['title']) {
+                postFormContainer.reset();
+                postFormContainer.className = "collapse";
+                setFeedback(notePostContainer, notePostContainer, "Post successful!", "text-success");
+                setTimeout(clearFeedback, 5000, notePostContainer, notePostContainer);
+                feed();
+            }
+            else {
+                setFeedback(notePostContainer, notePostContainer, postResponse['json']['errors'][0]['message'], "text-danger");
+            }
         }
         else {
             setFeedback(notePostContainer, notePostContainer, "Posting failed, try again!", "text-danger");
