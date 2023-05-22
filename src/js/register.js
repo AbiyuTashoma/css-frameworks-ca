@@ -86,7 +86,7 @@ async function validate(event) {
             }
             else if (registerResponse['json']['errors'][0]) {
                 console.log(registerResponse['json']['errors'][0]['message']);
-                setFeedback(successContainer, successContainer, registerResponse['json'].errors[0]['message'], "text-danger");
+                setFeedback(successContainer, successContainer, registerResponse['json']['errors'][0]['message'], "text-danger");
             }
         }
         

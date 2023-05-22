@@ -15,10 +15,28 @@ function createHtml (jasonArray) {
                     <span>Profile Name</span>
                 </a>
             </div>
-            <div class="my-2">
-                <p class="flex-fill">${jasonArray[i]['title']}</p>
-                <p class="flex-fill">${jasonArray[i]['body']}</p>
-                <img src="${jasonArray[i]['media']}" class="col-12">
+            <a class="btn text-start p-0 my-2" data-bs-toggle="modal" data-bs-target="#modal${i}">
+                <div class="my-2">
+                    <p class="fw-semibold mb-1">${jasonArray[i]['title']}</p>
+                    <p>${jasonArray[i]['body']}</p>
+                    <img src="${jasonArray[i]['media']}" class="col-12">
+                </div>
+            </a>
+            <div class="modal" id="modal${i}" tabindex="-1" aria-labelledby="exmodal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body p-3">
+                            <p class="fw-semibold mb-1">${jasonArray[i]['title']}</p>
+                            <p>${jasonArray[i]['body']}</p>
+                            <img src="${jasonArray[i]['media']}" class="col-12">
+                            <div class="row mt-3">
+                                <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
+                                <img src="src/image/icons/share.png" class="post-icon" alt="share">
+                                <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
