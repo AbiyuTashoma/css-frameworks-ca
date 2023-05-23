@@ -44,3 +44,6 @@ function search () {
 }
 
 searchForm.addEventListener('submit', search);
+
+// 'qweerty'.includes('ee') true
+// Use filter method
