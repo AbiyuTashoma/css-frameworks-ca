@@ -38,10 +38,9 @@ sortContainer.onchange = function() {
     feed(sortURL);
 }
 
-function search() {
+function search () {
     event.preventDefault();
     console.log(searchContainer.value);
-    feed();
 }
 
 searchForm.addEventListener('submit', search);
