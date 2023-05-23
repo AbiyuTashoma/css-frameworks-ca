@@ -7,6 +7,17 @@ function createHtml (jasonArray) {
     let html = "";
 
     for (let i = 0; i < jasonArray.length; i++) {
+
+        const contentTitle = jasonArray[i]['title'];
+        let contentBody = jasonArray[i]['body'];
+        let contentMedia = jasonArray[i]['media'];
+        if (!contentBody) {
+            contentBody = "";
+        }
+        if (!contentMedia) {
+            contentMedia = "";
+        }
+
     
         html += `<div class="container my-5 col-12 col-sm-8 col-xl-6">
             <div class="d-flex align-items-center gap-2">
@@ -17,9 +28,9 @@ function createHtml (jasonArray) {
             </div>
             <a class="btn text-start p-0 my-2" data-bs-toggle="modal" data-bs-target="#modal${i}">
                 <div class="my-2">
-                    <p class="fw-semibold mb-1">${jasonArray[i]['title']}</p>
-                    <p>${jasonArray[i]['body']}</p>
-                    <img src="${jasonArray[i]['media']}" class="col-12">
+                    <p class="fw-semibold mb-1">${contentTitle}</p>
+                    <p>${contentBody}</p>
+                    <img src="${contentMedia}" class="col-12">
                 </div>
             </a>
             <div class="modal" id="modal${i}" tabindex="-1" aria-labelledby="exmodal" aria-hidden="true">
