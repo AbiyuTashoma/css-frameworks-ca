@@ -21,7 +21,8 @@ const feedOption = {
 async function feed(fURL = feedURL) {
     const apiJson = await apiRequest(fURL, feedOption);
     if (apiJson['output'] == 'json') {
-        feedContainer.innerHTML = createHtml (apiJson['json']);
+        const cleanContent = contentClean (apiJson['json']);
+        feedContainer.innerHTML = createHtml (cleanContent);
         console.log('async', apiJson['json']);
     }
 
@@ -30,20 +31,29 @@ async function feed(fURL = feedURL) {
     }
 }
 
-feed();
-
 sortContainer.onchange = function() {
     console.log(sortContainer.value);
     const sortURL = feedURL + `&sort=${sortContainer.value}`;
     feed(sortURL);
 }
 
-function search () {
+async function search () {
     event.preventDefault();
-    console.log(searchContainer.value);
+    const searchText = searchContainer.value.toLowerCase();
+    console.log(searchText);
+
+    const apiResponse = await apiRequest (feedURL, feedOption);
+    const cleanJson = contentClean (apiResponse['json']);
+    const searchResult = cleanJson.filter (({title, body, media}) => 
+            title.toLowerCase().includes(searchText) || body.toLowerCase().includes(searchText) || media.toLowerCase().includes(searchText)
+        );
+    console.log(searchResult);
+    feedContainer.innerHTML = `<div class="container my-3 col-12 col-sm-8 col-xl-6">${searchResult.length} results found</div>`
+    feedContainer.innerHTML += createHtml (searchResult);
 }
 
-searchForm.addEventListener('submit', search);
+//Load feed
+feed();
 
-// 'qweerty'.includes('ee') true
-// Use filter method
+//call search function
+searchForm.addEventListener('submit', search);
