@@ -38,10 +38,21 @@ function createHtml (jasonArray) {
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
-                <img src="src/image/icons/share.png" class="post-icon" alt="share">
-                <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
+                    <img src="src/image/icons/share.png" class="post-icon" alt="share">
+                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        &#8226;&#8226;&#8226;
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                    </ul>
+                </div>
             </div>
         </div>`;
     }
