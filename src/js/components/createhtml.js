@@ -32,7 +32,7 @@ function createHtml (jasonArray) {
                             <p class="fw-semibold mb-1">${jasonArray[i]['title']}</p>
                             <p>${jasonArray[i]['body']}</p>
                             <img src="${jasonArray[i]['media']}" class="col-12">
-                            <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center justify-content-between mt-2">
                                 <div>
                                     <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
                                     <img src="src/image/icons/share.png" class="post-icon" alt="share">
@@ -63,30 +63,30 @@ function createHtml (jasonArray) {
                         &#8226;&#8226;&#8226;
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-edit${i}" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-edit${i}">Edit</a></li>
                         <li><a class="dropdown-item" href="#">Delete</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="modal" id="modal-edit${i}" tabindex="-1" aria-labelledby="exmodal" aria-hidden="true">
+            <div class="modal" id="modal-edit${i}" tabindex="-1" aria-labelledby="editmodal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body p-3">
                             <div class="note-post"></div>             
                             <form>
                                 <div class="input-group my-2">
-                                    <input type="text" id="post-title" class="form-control" aria-label="Add title" value=${jasonArray[i]['title']}>
+                                    <input type="text" id="edit-title" class="form-control" aria-label="edit title" value=${jasonArray[i]['title']}>
                                 </div>
-                                <div class="note-title mb-2"></div>             
+                                <div class="note-edittitle mb-2"></div>             
                                 <div class="input-group my-2">
-                                    <textarea id="post-body" class="form-control" aria-label="Add text content">${jasonArray[i]['body']}</textarea>
+                                    <textarea id="edit-body" class="form-control" aria-label="edit text content">${jasonArray[i]['body']}</textarea>
                                 </div>
                                 <div type="url" class="input-group my-2">
-                                    <input id="post-media" class="form-control" aria-label="Add media url" value=${jasonArray[i]['media']}>
+                                    <input id="edit-media" class="form-control" aria-label="edit media url" value=${jasonArray[i]['media']}>
                                 </div>
-                                <div class="btn-group text-align-center gap-2 mt-2 col-10 col-sm-6 col-xl-3">
-                                    <input type="submit" id="post-btn" class="custom-btn btn-primary" value="Update post"></button>
-                                    <button class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                <div class="btn-group gap-2 mt-2 col-10 col-sm-6 col-xl-3">
+                                    <input type="submit" id="edit-btn" class="custom-btn btn-primary" value="Update post"></button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
                                 </div>
                             </form>
                         </div>
