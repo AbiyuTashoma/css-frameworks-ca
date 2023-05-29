@@ -72,8 +72,8 @@ function createHtml (jasonArray) {
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body p-3">
-                            <div class="note-post"></div>             
-                            <form>
+                            <div class="note-update"></div>             
+                            <form id="update">
                                 <div class="input-group my-2">
                                     <input type="text" id="edit-title" class="form-control" aria-label="edit title" value=${jasonArray[i]['title']}>
                                 </div>
@@ -84,9 +84,11 @@ function createHtml (jasonArray) {
                                 <div type="url" class="input-group my-2">
                                     <input id="edit-media" class="form-control" aria-label="edit media url" value=${jasonArray[i]['media']}>
                                 </div>
-                                <div class="btn-group gap-2 mt-2 col-10 col-sm-6 col-xl-3">
-                                    <input type="submit" id="edit-btn" class="custom-btn btn-primary" value="Update post"></button>
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                <div class="d-flex justify-content-center">
+                                    <div class="mt-2 col-10 col-sm-6 col-xl-3">
+                                        <input type="submit" id="edit-btn" class="custom-btn btn-primary" value="Update post">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
