@@ -63,7 +63,7 @@ function createHtml (jasonArray) {
                         &#8226;&#8226;&#8226;
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-edit${i}">Edit</a></li>
+                        <li><a class="dropdown-item" id="edit-btn" data-bs-toggle="modal" data-bs-target="#modal-edit${i}">Edit</a></li>
                         <li><a class="dropdown-item" href="#">Delete</a></li>
                     </ul>
                 </div>
@@ -86,7 +86,7 @@ function createHtml (jasonArray) {
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <div class="mt-2 col-10 col-sm-6 col-xl-3">
-                                        <input type="submit" id="edit-btn" class="custom-btn btn-primary" value="Update post">
+                                        <input type="submit" id="update-btn" class="custom-btn btn-primary" value="Update post">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
                                     </div>
                                 </div>

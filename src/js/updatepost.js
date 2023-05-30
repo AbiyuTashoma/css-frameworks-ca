@@ -1,5 +1,6 @@
-const updateFormContainer = document.querySelector("#update");
-const updateBtnContainer = document.querySelector("#edit-btn");
+// const updateFormContainer = document.querySelector("#update");
+// const updateBtnContainer = document.querySelector("#update-btn");
+// const editBtnContainer = document.querySelector("#edit-btn");
 
 function updatePost (event) {
     event.preventDefault();
@@ -14,5 +15,11 @@ function updatePost (event) {
 
 }
 
+window.addEventListener("load", (event) => {
+    console.log("page is fully loaded");
+    // const editBtnContainer = document.querySelector("#edit-btn");
+    // console.log(editBtnContainer);
+  });
+
 // updateFormContainer.addEventListener('submit', updatePost);
-updateBtnContainer.addEventListener('click', updatePost);
+// editBtnContainer.addEventListener('click', updatePost);

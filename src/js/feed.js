@@ -8,6 +8,8 @@ const sortContainer = document.querySelector('#orderby');
 const searchContainer = document.querySelector('#search');
 const searchForm = document.querySelector('.search-form');
 
+const editBtnContainer = {};
+
 const accessToken = localStorage.getItem('accessToken');
 
 const feedOption = {
@@ -24,6 +26,8 @@ async function feed(fURL = feedURL) {
         const cleanContent = contentClean (apiJson['json']);
         feedContainer.innerHTML = createHtml (cleanContent);
         console.log('async', apiJson['json']);
+        editBtnContainer['btns'] = document.querySelectorAll("#edit-btn");
+        console.log(editBtnContainer);
     }
 
     else {
