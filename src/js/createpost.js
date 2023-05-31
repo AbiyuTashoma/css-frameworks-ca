@@ -19,7 +19,7 @@ async function createPost(event) {
     const postTitle = postTitleContainer.value;
     const postBody = postBodyContainer.value;
     const postMedia = postMediaContainer.value;
-    
+
     const validTitle = validateText(postTitle, 1, 100);
 
     if (!validTitle) {
@@ -33,7 +33,7 @@ async function createPost(event) {
             "tags": ['SoMeABT'],
             "media": `${postMedia}`
         };
-        
+
         const postOption = {
             method: 'POST',
             body: JSON.stringify(postData),
@@ -43,7 +43,7 @@ async function createPost(event) {
             },
         }
 
-        const postResponse = await apiRequest (postURL, postOption);
+        const postResponse = await apiRequest(postURL, postOption);
 
         console.log(postResponse);
         if (postResponse['output'] == 'json') {
@@ -64,7 +64,7 @@ async function createPost(event) {
     }
 }
 
-postTitleContainer.oninput = function() {
+postTitleContainer.oninput = function () {
     clearFeedback(noteTitleContainer, postTitleContainer);
 }
 

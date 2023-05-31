@@ -3,11 +3,11 @@
  * @param {object} jasonArray 
  * @returns html object
  */
-function createHtml (jasonArray) {
+function createHtml(jasonArray) {
     let html = "";
 
     for (let i = 0; i < jasonArray.length; i++) {
-   
+
         html += `<div class="container my-5 col-12 col-sm-8 col-xl-6">
             <div class="d-flex align-items-center gap-2">
                 <a href="profile.html" class="text-decoration-none text-dark">
@@ -22,7 +22,7 @@ function createHtml (jasonArray) {
                     <img src="${jasonArray[i]['media']}" class="col-12">
                 </div>
             </a>
-            <div class="modal" id="modal${i}" tabindex="-1" aria-labelledby="exmodal" aria-hidden="true">
+            <div class="modal fade" id="modal${i}" tabindex="-1" aria-labelledby="exmodal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -68,21 +68,21 @@ function createHtml (jasonArray) {
                     </ul>
                 </div>
             </div>
-            <div class="modal" id="modal-edit${i}" tabindex="-1" aria-labelledby="editmodal" aria-hidden="true">
+            <div class="modal fade" id="modal-edit${i}" tabindex="-1" aria-labelledby="editmodal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body p-3">
                             <div class="note-update"></div>             
-                            <form id="update">
+                            <form id="update" name="${jasonArray[i]['id']}">
                                 <div class="input-group my-2">
-                                    <input type="text" id="edit-title" class="form-control" aria-label="edit title" value=${jasonArray[i]['title']}>
+                                    <input type="text" id="edit-title" class="form-control" aria-label="edit title" value='${jasonArray[i]['title']}'>
                                 </div>
                                 <div class="note-edittitle mb-2"></div>             
                                 <div class="input-group my-2">
                                     <textarea id="edit-body" class="form-control" aria-label="edit text content">${jasonArray[i]['body']}</textarea>
                                 </div>
                                 <div type="url" class="input-group my-2">
-                                    <input id="edit-media" class="form-control" aria-label="edit media url" value=${jasonArray[i]['media']}>
+                                    <input id="edit-media" class="form-control" aria-label="edit media url" value='${jasonArray[i]['media']}'>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <div class="mt-2 col-10 col-sm-6 col-xl-3">

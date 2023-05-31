@@ -9,7 +9,7 @@ const feedbackErrorContainer = document.querySelector(".feedback-error");
 const loginFormContainer = document.querySelector(".login-form");
 
 //clear error message oninput
-userNameContainer.oninput = function() {
+userNameContainer.oninput = function () {
     clearFeedback(feedbackErrorContainer, feedbackErrorContainer);
 }
 
@@ -21,7 +21,7 @@ passwordContainer.oninput = function () {
  * authenticates and logs in user
  * @param {event} event 
  */
-async function loginUser (event) {
+async function loginUser(event) {
 
     event.preventDefault();
 
@@ -40,7 +40,7 @@ async function loginUser (event) {
             'Content-type': 'application/json; charset=UTF-8'
         },
     }
-    
+
     try {
         const response = await fetch(loginURL, loginOption);
         const json = await response.json();
