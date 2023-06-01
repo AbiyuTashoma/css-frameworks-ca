@@ -15,11 +15,9 @@ async function updatePost(event) {
   const postID = parseInt(document.querySelector('.show #update').name);
   const updateURL = postURL + `/${postID}`;
 
-  console.log(updateURL);
-  // console.log(noteUpdateTitle);
-  console.log(updatedTitle);
-  console.log(updatedBody);
-  console.log(updatedMedia);
+  updatedTitleContainer.oninput = function () {
+    clearFeedback(noteUpdateTitle, updatedTitleContainer);
+  }
 
   const validTitle = validateText(updatedTitle, 1, 100);
 
@@ -46,17 +44,11 @@ async function updatePost(event) {
 
     const updateResponse = await apiRequest(updateURL, updateOption);
 
-    console.log(updateResponse);
+    // console.log(updateResponse);
     if (updateResponse['output'] == 'json') {
       if (updateResponse['json']['title']) {
-        // updateFormContainer.reset();
-        // updateFormContainer.className = "collapse";
         setFeedback(noteUpdateContainer, noteUpdateContainer, "Update successful!", "text-success");
-        setTimeout(clearFeedback, 5000, noteUpdateContainer, noteUpdateContainer);
-        const modalShow = document.querySelector('.modal');
-        console.log(modalShow);
-        modalShow.classList.remove('show');
-        // feed();
+        setTimeout(refresh, 3000);
       }
       else {
         setFeedback(noteUpdateContainer, noteUpdateContainer, updateResponse['json']['errors'][0]['message'], "text-danger");

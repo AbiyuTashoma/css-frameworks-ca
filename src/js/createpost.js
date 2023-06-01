@@ -51,7 +51,7 @@ async function createPost(event) {
                 postFormContainer.reset();
                 postFormContainer.className = "collapse";
                 setFeedback(notePostContainer, notePostContainer, "Post successful!", "text-success");
-                setTimeout(clearFeedback, 5000, notePostContainer, notePostContainer);
+                setTimeout(clearFeedback, 3000, notePostContainer, notePostContainer);
                 feed();
             }
             else {

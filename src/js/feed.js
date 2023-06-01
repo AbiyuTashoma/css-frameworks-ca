@@ -26,6 +26,7 @@ async function feed(fURL = feedURL) {
         const cleanContent = contentClean(apiJson['json']);
         feedContainer.innerHTML = createHtml(cleanContent);
         console.log('async', apiJson['json']);
+
         updateFormContainer['forms'] = document.querySelectorAll("#update");
         for (let i = 0; i < updateFormContainer['forms'].length; i++) {
             updateFormContainer['forms'][i].addEventListener('submit', updatePost);
