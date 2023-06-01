@@ -8,7 +8,7 @@ const sortContainer = document.querySelector('#orderby');
 const searchContainer = document.querySelector('#search');
 const searchForm = document.querySelector('.search-form');
 
-const updateFormContainer = {};
+const modalCTA = {};
 
 const accessToken = localStorage.getItem('accessToken');
 
@@ -27,11 +27,18 @@ async function feed(fURL = feedURL) {
         feedContainer.innerHTML = createHtml(cleanContent);
         console.log('async', apiJson['json']);
 
-        updateFormContainer['forms'] = document.querySelectorAll("#update");
-        for (let i = 0; i < updateFormContainer['forms'].length; i++) {
-            updateFormContainer['forms'][i].addEventListener('submit', updatePost);
+        modalCTA['update'] = document.querySelectorAll("#update");
+        modalCTA['delete'] = document.querySelectorAll("#delete-btn");
+
+        for (let i = 0; i < modalCTA['update'].length; i++) {
+            modalCTA['update'][i].addEventListener('submit', updatePost);
         }
-        // console.log(updateFormContainer['forms']);
+
+        for (let i = 0; i < modalCTA['delete'].length; i++) {
+            modalCTA['delete'][i].addEventListener('click', deletePost);
+        }
+        // console.log(modalCTA['update']);
+        // console.log(modalCTA['delete']);
     }
 
     else {
