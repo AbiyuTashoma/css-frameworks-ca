@@ -12,15 +12,15 @@ const registerFormContainer = document.querySelector("#register");
 const registerURL = BASE_URL + '/auth/register';
 
 //Clear error oninput
-registerNameContainer.oninput = function() {
+registerNameContainer.oninput = function () {
     clearFeedback(noteNameContainer, registerNameContainer);
     clearFeedback(successContainer, successContainer);
 }
-registerEmailContainer.oninput = function() {
+registerEmailContainer.oninput = function () {
     clearFeedback(noteEmailContainer, registerEmailContainer);
     clearFeedback(successContainer, successContainer);
 }
-registerPasswordContainer.oninput = function() {
+registerPasswordContainer.oninput = function () {
     clearFeedback(notePasswordContainer, registerPasswordContainer);
     clearFeedback(successContainer, successContainer);
 }
@@ -75,9 +75,9 @@ async function validate(event) {
             },
         }
 
-        const registerResponse = await apiRequest (registerURL, registerOption);
+        const registerResponse = await apiRequest(registerURL, registerOption);
         console.log(registerResponse);
-        
+
         if (registerResponse['output'] == 'json') {
             if (registerResponse['json']['id']) {
                 setFeedback(successContainer, successContainer, "Registration successful, login above!", "text-success");
@@ -89,7 +89,7 @@ async function validate(event) {
                 setFeedback(successContainer, successContainer, registerResponse['json']['errors'][0]['message'], "text-danger");
             }
         }
-        
+
         if (registerResponse['output'] == 'error') {
             setFeedback(successContainer, successContainer, "Unknown error, please try again", "text-danger");
         }
