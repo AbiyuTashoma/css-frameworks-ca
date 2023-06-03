@@ -9,8 +9,6 @@ const successContainer = document.querySelector(".feedback-success");
 
 const registerFormContainer = document.querySelector("#register");
 
-const registerURL = BASE_URL + '/auth/register';
-
 //Clear error oninput
 registerNameContainer.oninput = function () {
     clearFeedback(noteNameContainer, registerNameContainer);
@@ -27,7 +25,7 @@ registerPasswordContainer.oninput = function () {
 
 //validate input
 /**
- * validates registration details
+ * validates and registers user
  * @param {event} event 
  */
 async function validate(event) {

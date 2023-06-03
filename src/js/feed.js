@@ -1,8 +1,3 @@
-const BASE_URL = 'https://nf-api.onrender.com/api/v1/social';
-const feedURL = BASE_URL + '/posts?';
-const feedLimit = feedURL + 'limit=20';
-const feedTag = feedURL + '_tag=SoMeABT';
-
 const feedContainer = document.querySelector('.feed-content');
 const sortContainer = document.querySelector('#orderby');
 const searchContainer = document.querySelector('#search');
@@ -11,6 +6,11 @@ const searchForm = document.querySelector('.search-form');
 const modalCTA = {};
 
 const accessToken = localStorage.getItem('accessToken');
+const profileName = localStorage.getItem('profileName');
+
+//profiles/<name>/posts
+const profileURL = BASE_URL + `/profiles/${profileName}/posts`;
+console.log(profileURL);
 
 const feedOption = {
     method: 'GET',

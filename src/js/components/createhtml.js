@@ -43,7 +43,7 @@ function createHtml(jasonArray) {
                                         &#8226;&#8226;&#8226;
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" id="edit-btn" data-bs-toggle="modal" data-bs-target="#modal-edit${i}" href="#">Edit</a></li>
+                                        <li><a class="dropdown-item" id="edit-btn" data-bs-toggle="modal" data-bs-target="#modal-edit${i}">Edit</a></li>
                                         <li><a class="dropdown-item" id="delete-btn" data-bs-toggle="modal" data-bs-target="#modal-delete${i}">Delete</a></li>
                                     </ul>
                                 </div>
