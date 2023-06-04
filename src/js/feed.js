@@ -1,8 +1,3 @@
-const BASE_URL = 'https://nf-api.onrender.com/api/v1/social';
-const feedURL = BASE_URL + '/posts?';
-const feedLimit = feedURL + 'limit=20';
-const feedTag = feedURL + '_tag=SoMeABT';
-
 const feedContainer = document.querySelector('.feed-content');
 const sortContainer = document.querySelector('#orderby');
 const searchContainer = document.querySelector('#search');
@@ -11,6 +6,7 @@ const searchForm = document.querySelector('.search-form');
 const modalCTA = {};
 
 const accessToken = localStorage.getItem('accessToken');
+const currentUser = localStorage.getItem('currentUser');
 
 const feedOption = {
     method: 'GET',
@@ -23,9 +19,17 @@ const feedOption = {
 async function feed(fURL = feedURL) {
     const apiJson = await apiRequest(fURL, feedOption);
     if (apiJson['output'] == 'json') {
-        const cleanContent = contentClean(apiJson['json']);
-        feedContainer.innerHTML = createHtml(cleanContent);
         console.log('async', apiJson['json']);
+
+        const cleanContent = contentClean(apiJson['json']);
+        for (let i = 0; i < cleanContent.length; i++) {
+            let dropdownButtonState = 'disabled';
+            if (cleanContent[i]['author']['name'] === currentUser) {
+                dropdownButtonState = 'enabled';
+            }
+
+            feedContainer.innerHTML += createHtml(cleanContent[i], cleanContent[i]['author']['name'], i, dropdownButtonState);
+        }
 
         modalCTA['update'] = document.querySelectorAll("#update");
         modalCTA['delete'] = document.querySelectorAll("#delete-btn");

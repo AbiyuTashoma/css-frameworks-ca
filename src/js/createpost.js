@@ -7,8 +7,6 @@ const noteTitleContainer = document.querySelector('.note-title');
 
 const notePostContainer = document.querySelector(".note-post");
 
-const postURL = BASE_URL + '/posts';
-
 /**
  * creates a content post from the form fields
  * @param {event} event 
@@ -51,8 +49,9 @@ async function createPost(event) {
                 postFormContainer.reset();
                 postFormContainer.className = "collapse";
                 setFeedback(notePostContainer, notePostContainer, "Post successful!", "text-success");
-                setTimeout(clearFeedback, 3000, notePostContainer, notePostContainer);
-                feed();
+                // setTimeout(clearFeedback, 3000, notePostContainer, notePostContainer);
+                setTimeout(refresh, 3000);
+                // feed();
             }
             else {
                 setFeedback(notePostContainer, notePostContainer, postResponse['json']['errors'][0]['message'], "text-danger");

@@ -1,6 +1,3 @@
-const BASE_URL = 'https://nf-api.onrender.com/api/v1/social';
-const loginURL = BASE_URL + '/auth/login';
-
 const userNameContainer = document.querySelector("#email");
 const passwordContainer = document.querySelector("#password");
 
@@ -47,6 +44,7 @@ async function loginUser(event) {
         if (json.accessToken) {
             console.log('Login successful');
             localStorage.setItem('accessToken', json.accessToken);
+            localStorage.setItem('currentUser', json.name);
             window.open("feed.html", '_self');
         }
 
@@ -54,8 +52,6 @@ async function loginUser(event) {
             console.log('Invalid email or password');
             setFeedback(feedbackErrorContainer, feedbackErrorContainer, 'Invalid email or password', "text-danger");
         }
-
-        // console.log(json);
     }
 
     catch (error) {

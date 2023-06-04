@@ -1,4 +1,7 @@
-
+/**
+ * deletes a post
+ * @param {*} event 
+ */
 async function deletePost(event) {
     event.preventDefault();
 
