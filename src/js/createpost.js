@@ -7,8 +7,6 @@ const noteTitleContainer = document.querySelector('.note-title');
 
 const notePostContainer = document.querySelector(".note-post");
 
-// const postURL = BASE_URL + '/posts';
-
 /**
  * creates a content post from the form fields
  * @param {event} event 

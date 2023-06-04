@@ -8,9 +8,7 @@ const profileName = localStorage.getItem('profileName');
 
 nameContainer.innerHTML = profileName;
 
-//profiles/<name>/posts
 const profileURL = BASE_URL + `/profiles/${profileName}/posts`;
-// console.log(profileURL);
 
 const feedOption = {
     method: 'GET',
@@ -24,8 +22,11 @@ async function feedProfile(fURL) {
     const apiJson = await apiRequest(fURL, feedOption);
     if (apiJson['output'] == 'json') {
         const cleanContent = contentClean(apiJson['json']);
-        profileFeedContainer.innerHTML = createHtml(cleanContent);
         console.log('async', apiJson['json']);
+
+        for (let i = 0; i < cleanContent.length; i++) {
+            profileFeedContainer.innerHTML += createHtml(cleanContent[i], profileName, i);
+        }
 
         modalCTA['update'] = document.querySelectorAll("#update");
         modalCTA['delete'] = document.querySelectorAll("#delete-btn");
@@ -37,8 +38,6 @@ async function feedProfile(fURL) {
         for (let i = 0; i < modalCTA['delete'].length; i++) {
             modalCTA['delete'][i].addEventListener('click', deletePost);
         }
-        // console.log(modalCTA['update']);
-        // console.log(modalCTA['delete']);
     }
 
     else {
