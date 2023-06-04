@@ -4,11 +4,19 @@ const nameContainer = document.querySelector('.profile-name');
 const modalCTA = {};
 
 const accessToken = localStorage.getItem('accessToken');
-const profileName = localStorage.getItem('profileName');
+const currentUser = localStorage.getItem('currentUser');
 
-nameContainer.innerHTML = profileName;
+const queryString = document.location.search;
+const param = new URLSearchParams(queryString);
+const profileName = { name: param.get("profile_name") };
 
-const profileURL = BASE_URL + `/profiles/${profileName}/posts`;
+if (!profileName) {
+    console.log('no profile');
+    profileName = { name: currentUser };
+}
+
+const profileURL = BASE_URL + `/profiles/${profileName['name']}/posts`;
+nameContainer.innerHTML = profileName['name'];
 
 const feedOption = {
     method: 'GET',
@@ -25,7 +33,7 @@ async function feedProfile(fURL) {
         console.log('async', apiJson['json']);
 
         for (let i = 0; i < cleanContent.length; i++) {
-            profileFeedContainer.innerHTML += createHtml(cleanContent[i], profileName, i);
+            profileFeedContainer.innerHTML += createHtml(cleanContent[i], profileName['name'], i);
         }
 
         modalCTA['update'] = document.querySelectorAll("#update");

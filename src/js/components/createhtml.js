@@ -8,7 +8,7 @@ function createHtml(jasonArray, postAuthor, cnt) {
 
     html = `<div class="container my-5 col-12 col-sm-8 col-xl-6">
                 <div class="d-flex align-items-center gap-2">
-                    <a href="profile.html" class="text-decoration-none text-dark">
+                    <a href="profile.html?profile_name=${postAuthor}" class="text-decoration-none text-dark">
                         <img src="src/image/user.png" class="rounded-circle post-userimage me-2" alt="profile picture">
                         <span>${postAuthor}</span>
                     </a>

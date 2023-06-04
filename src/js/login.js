@@ -44,7 +44,7 @@ async function loginUser(event) {
         if (json.accessToken) {
             console.log('Login successful');
             localStorage.setItem('accessToken', json.accessToken);
-            localStorage.setItem('profileName', json.name);
+            localStorage.setItem('currentUser', json.name);
             window.open("feed.html", '_self');
         }
 

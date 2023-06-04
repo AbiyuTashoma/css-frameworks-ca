@@ -6,10 +6,6 @@ const searchForm = document.querySelector('.search-form');
 const modalCTA = {};
 
 const accessToken = localStorage.getItem('accessToken');
-const profileName = localStorage.getItem('profileName');
-
-const profileURL = BASE_URL + `/profiles/${profileName}/posts`;
-// console.log(profileURL);
 
 const feedOption = {
     method: 'GET',
