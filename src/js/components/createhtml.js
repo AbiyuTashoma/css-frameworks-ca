@@ -3,7 +3,7 @@
  * @param {object} jasonArray 
  * @returns html object
  */
-function createHtml(jasonArray, postAuthor, cnt) {
+function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
     let html = "";
 
     html = `<div class="container my-5 col-12 col-sm-8 col-xl-6">
@@ -41,8 +41,8 @@ function createHtml(jasonArray, postAuthor, cnt) {
                                             &#8226;&#8226;&#8226;
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item" id="edit-btn" data-bs-toggle="modal" data-bs-target="#modal-edit${cnt}">Edit</a></li>
-                                            <li><a class="dropdown-item" id="delete-btn" data-bs-toggle="modal" data-bs-target="#modal-delete${cnt}">Delete</a></li>
+                                            <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-edit${cnt}" ${btnState}>Edit</button></li>
+                                            <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-delete${cnt}" ${btnState}>Delete</button></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -61,8 +61,8 @@ function createHtml(jasonArray, postAuthor, cnt) {
                             &#8226;&#8226;&#8226;
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-edit${cnt}">Edit</a></li>
-                            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-delete${cnt}">Delete</a></li>
+                            <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-edit${cnt}" ${btnState}>Edit</button></li>
+                            <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-delete${cnt}" ${btnState}>Delete</button></li>
                         </ul>
                     </div>
                 </div>

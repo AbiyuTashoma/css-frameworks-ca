@@ -8,15 +8,16 @@ const currentUser = localStorage.getItem('currentUser');
 
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
-const profileName = { name: param.get("profile_name") };
+let profileName = param.get("profile_name");
 
 if (!profileName) {
     console.log('no profile');
-    profileName = { name: currentUser };
+    console.log(currentUser);
+    profileName = currentUser;
 }
 
-const profileURL = BASE_URL + `/profiles/${profileName['name']}/posts`;
-nameContainer.innerHTML = profileName['name'];
+const profileURL = BASE_URL + `/profiles/${profileName}/posts`;
+nameContainer.innerHTML = profileName;
 
 const feedOption = {
     method: 'GET',
@@ -33,7 +34,12 @@ async function feedProfile(fURL) {
         console.log('async', apiJson['json']);
 
         for (let i = 0; i < cleanContent.length; i++) {
-            profileFeedContainer.innerHTML += createHtml(cleanContent[i], profileName['name'], i);
+            let dropdownButtonState = 'disabled';
+            if (profileName === currentUser) {
+                dropdownButtonState = 'enabled';
+            }
+
+            profileFeedContainer.innerHTML += createHtml(cleanContent[i], profileName, i, dropdownButtonState);
         }
 
         modalCTA['update'] = document.querySelectorAll("#update");

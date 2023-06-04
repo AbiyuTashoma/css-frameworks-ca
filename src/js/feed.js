@@ -6,6 +6,7 @@ const searchForm = document.querySelector('.search-form');
 const modalCTA = {};
 
 const accessToken = localStorage.getItem('accessToken');
+const currentUser = localStorage.getItem('currentUser');
 
 const feedOption = {
     method: 'GET',
@@ -22,7 +23,12 @@ async function feed(fURL = feedURL) {
 
         const cleanContent = contentClean(apiJson['json']);
         for (let i = 0; i < cleanContent.length; i++) {
-            feedContainer.innerHTML += createHtml(cleanContent[i], cleanContent[i]['author']['name'], i);
+            let dropdownButtonState = 'disabled';
+            if (cleanContent[i]['author']['name'] === currentUser) {
+                dropdownButtonState = 'enabled';
+            }
+
+            feedContainer.innerHTML += createHtml(cleanContent[i], cleanContent[i]['author']['name'], i, dropdownButtonState);
         }
 
         modalCTA['update'] = document.querySelectorAll("#update");
