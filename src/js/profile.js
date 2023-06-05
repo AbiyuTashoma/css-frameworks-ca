@@ -28,7 +28,9 @@ const feedOption = {
 };
 
 async function feedProfile(fURL) {
+    profileFeedContainer.innerHTML = loading;
     const apiJson = await apiRequest(fURL, feedOption);
+    profileFeedContainer.innerHTML = "";
     if (apiJson['output'] == 'json') {
         const cleanContent = contentClean(apiJson['json']);
         console.log('async', apiJson['json']);
