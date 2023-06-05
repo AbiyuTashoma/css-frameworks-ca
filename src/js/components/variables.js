@@ -5,3 +5,8 @@ const feedLimit = feedURL + 'limit=20';
 const feedTag = feedURL + '_tag=SoMeABT';
 const loginURL = BASE_URL + '/auth/login';
 const registerURL = BASE_URL + '/auth/register';
+const loading = `<div class="text-center">
+                <div class="spinner-border mt-3 text-primary" style="width: 4rem; height: 4rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>`;
