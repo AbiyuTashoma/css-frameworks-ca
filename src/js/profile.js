@@ -36,7 +36,7 @@ async function feedProfile(fURL) {
         console.log('async', apiJson['json']);
 
         if (cleanContent.length == 0) {
-            setFeedback(profileFeedContainer, profileFeedContainer, "You have not posted", "text-center");
+            setFeedback(profileFeedContainer, profileFeedContainer, "You have not posted yet", "text-center");
         }
 
         for (let i = 0; i < cleanContent.length; i++) {
