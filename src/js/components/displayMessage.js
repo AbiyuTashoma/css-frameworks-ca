@@ -5,7 +5,7 @@
  * @param {Text} errorMessage 
  */
 function setFeedback(noteContainer, inputContainer, errorMessage, type) {
-    noteContainer.innerHTML = `<div class=${type}>${errorMessage}</div>`;
+    noteContainer.innerHTML = `<div class='${type}'>${errorMessage}</div>`;
     inputContainer.style.borderColor = "red";
 }
 

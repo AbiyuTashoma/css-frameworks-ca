@@ -35,6 +35,10 @@ async function feedProfile(fURL) {
         const cleanContent = contentClean(apiJson['json']);
         console.log('async', apiJson['json']);
 
+        if (cleanContent.length == 0) {
+            setFeedback(profileFeedContainer, profileFeedContainer, "You have not posted yet", "text-center");
+        }
+
         for (let i = 0; i < cleanContent.length; i++) {
             let dropdownButtonState = 'disabled';
             if (profileName === currentUser) {
