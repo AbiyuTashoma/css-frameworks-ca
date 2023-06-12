@@ -3,11 +3,6 @@ const sortContainer = document.querySelector('#orderby');
 const searchContainer = document.querySelector('#search');
 const searchForm = document.querySelector('.search-form');
 
-const modalCTA = {};
-
-const accessToken = localStorage.getItem('accessToken');
-const currentUser = localStorage.getItem('currentUser');
-
 const feedOption = {
     method: 'GET',
     headers: {
@@ -44,8 +39,6 @@ async function feed(fURL = feedURL) {
         for (let i = 0; i < modalCTA['delete'].length; i++) {
             modalCTA['delete'][i].addEventListener('click', deletePost);
         }
-        // console.log(modalCTA['update']);
-        // console.log(modalCTA['delete']);
     }
 
     else {
@@ -53,6 +46,7 @@ async function feed(fURL = feedURL) {
     }
 }
 
+//Sort posts based on selection
 sortContainer.onchange = function () {
     console.log(sortContainer.value);
     const sortURL = feedURL + `&sort=${sortContainer.value}`;

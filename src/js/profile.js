@@ -5,10 +5,6 @@ const postsContainer = document.querySelector('.posts');
 const followersContainer = document.querySelector('.followers');
 const followingContainer = document.querySelector('.following');
 
-const modalCTA = {};
-
-const accessToken = localStorage.getItem('accessToken');
-const currentUser = localStorage.getItem('currentUser');
 
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
@@ -19,6 +15,9 @@ if (!profileName) {
     console.log(currentUser);
     profileName = currentUser;
 }
+
+//Set document title
+document.title = profileName;
 
 const profileURL = BASE_URL + `/profiles/${profileName}?_posts=true`;
 nameContainer.innerHTML = profileName;
