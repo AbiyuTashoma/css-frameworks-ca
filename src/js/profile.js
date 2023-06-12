@@ -1,6 +1,10 @@
 const profileFeedContainer = document.querySelector('.feed-profile');
 const nameContainer = document.querySelector('.profile-name');
 
+const postsContainer = document.querySelector('.posts');
+const followersContainer = document.querySelector('.followers');
+const followingContainer = document.querySelector('.following');
+
 const modalCTA = {};
 
 const accessToken = localStorage.getItem('accessToken');
@@ -16,7 +20,7 @@ if (!profileName) {
     profileName = currentUser;
 }
 
-const profileURL = BASE_URL + `/profiles/${profileName}/posts`;
+const profileURL = BASE_URL + `/profiles/${profileName}?_posts=true`;
 nameContainer.innerHTML = profileName;
 
 const feedOption = {
@@ -32,10 +36,14 @@ async function feedProfile(fURL) {
     const apiJson = await apiRequest(fURL, feedOption);
     profileFeedContainer.innerHTML = "";
     if (apiJson['output'] == 'json') {
-        const cleanContent = contentClean(apiJson['json']);
-        console.log('async', apiJson['json']);
+        const cleanContent = contentClean(apiJson['json']['posts']);
+        console.log('async', apiJson['json']['posts']);
 
-        if (cleanContent.length == 0) {
+        postsContainer.innerHTML = apiJson['json']['_count']['posts'];
+        followersContainer.innerHTML = apiJson['json']['_count']['followers'];
+        followingContainer.innerHTML = apiJson['json']['_count']['following'];
+
+        if (apiJson['json']['_count']['posts'] == 0) {
             setFeedback(profileFeedContainer, profileFeedContainer, "You have not posted yet", "text-center");
         }
 
