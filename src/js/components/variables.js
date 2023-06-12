@@ -10,3 +10,5 @@ const loading = `<div class="text-center">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>`;
+
+const modalCTA = {};
