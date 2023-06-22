@@ -8,7 +8,7 @@ async function apiRequest(apiURL, requestOption) {
         const response = await fetch(apiURL, requestOption);
         const json = await response.json();
 
-        // console.log(json);
+        console.log(json);
         return { 'output': 'json', 'json': json };
     }
 

@@ -4,7 +4,7 @@ const nameContainer = document.querySelector('.profile-name');
 const postsContainer = document.querySelector('.posts');
 const followersContainer = document.querySelector('.followers');
 const followingContainer = document.querySelector('.following');
-
+const followBtnContainer = document.querySelector('.follow-btn');
 
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
@@ -14,12 +14,13 @@ if (!profileName) {
     console.log('no profile');
     console.log(currentUser);
     profileName = currentUser;
+    followBtnContainer.disabled = true;
 }
 
 //Set document title
 document.title = profileName;
 
-const profileURL = BASE_URL + `/profiles/${profileName}?_posts=true`;
+const profileURL = BASE_URL + `/profiles/${profileName}?_posts=true&_followers=true`;
 nameContainer.innerHTML = profileName;
 
 const feedOption = {
@@ -45,6 +46,8 @@ async function feedProfile(fURL) {
         if (apiJson['json']['_count']['posts'] == 0) {
             setFeedback(profileFeedContainer, profileFeedContainer, "You have not posted yet", "text-center");
         }
+
+        console.log(apiJson['json']['followers']);
 
         for (let i = 0; i < cleanContent.length; i++) {
             let dropdownButtonState = 'disabled';
