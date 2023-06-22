@@ -5,10 +5,17 @@ const postsContainer = document.querySelector('.posts');
 const followersContainer = document.querySelector('.followers');
 const followingContainer = document.querySelector('.following');
 const followBtnContainer = document.querySelector('.follow-btn');
+const followBtnTextContainer = document.querySelector('.follow-btn span');
 
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
 let profileName = param.get("profile_name");
+
+if (profileName === currentUser) {
+    console.log(profileName);
+    console.log(currentUser);
+    followBtnContainer.disabled = true;
+}
 
 if (!profileName) {
     console.log('no profile');
@@ -21,12 +28,20 @@ if (!profileName) {
 document.title = profileName;
 
 const profileURL = BASE_URL + `/profiles/${profileName}?_posts=true&_followers=true`;
+const followURL = BASE_URL + `/profiles/${profileName}/follow`;
 nameContainer.innerHTML = profileName;
 
 const feedOption = {
     method: 'GET',
     headers: {
         'Content-type': 'application/json; charset=UTF-8',
+        Authorization: `Bearer ${accessToken}`,
+    },
+};
+
+const followOption = {
+    method: 'PUT',
+    headers: {
         Authorization: `Bearer ${accessToken}`,
     },
 };
@@ -47,7 +62,11 @@ async function feedProfile(fURL) {
             setFeedback(profileFeedContainer, profileFeedContainer, "You have not posted yet", "text-center");
         }
 
-        console.log(apiJson['json']['followers']);
+        const isFollower = apiJson['json']['followers'].find(({ name }) => name === currentUser);
+        if (isFollower) {
+            followBtnTextContainer.innerHTML = 'following';
+            followBtnContainer.disabled = true;
+        }
 
         for (let i = 0; i < cleanContent.length; i++) {
             let dropdownButtonState = 'disabled';
@@ -74,5 +93,19 @@ async function feedProfile(fURL) {
         console.log('error', apiJson['error']);
     }
 }
+
+async function followProfile() {
+
+    const followResponse = await apiRequest(followURL, followOption);
+
+    if (followResponse['json']['name']) {
+        followBtnContainer.disabled = true;
+        followBtnTextContainer.innerHTML = 'following';
+        followersContainer.innerHTML = parseInt(followersContainer.innerText) + 1;
+    }
+
+}
+
+followBtnContainer.addEventListener('click', followProfile);
 
 feedProfile(profileURL);
