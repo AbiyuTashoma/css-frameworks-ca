@@ -10,5 +10,8 @@ const loading = `<div class="text-center">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>`;
+const loadingProfile = `<div class="spinner-border text-secondary" style="width: 1rem; height: 1rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+            </div>`;
 
 const modalCTA = {};

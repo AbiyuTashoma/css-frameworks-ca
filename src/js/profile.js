@@ -4,22 +4,23 @@ const nameContainer = document.querySelector('.profile-name');
 const postsContainer = document.querySelector('.posts');
 const followersContainer = document.querySelector('.followers');
 const followingContainer = document.querySelector('.following');
-
+const followBtnContainer = document.querySelector('.follow-btn');
+const followBtnTextContainer = document.querySelector('.follow-btn span');
 
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
 let profileName = param.get("profile_name");
 
 if (!profileName) {
-    console.log('no profile');
-    console.log(currentUser);
     profileName = currentUser;
 }
 
 //Set document title
 document.title = profileName;
 
-const profileURL = BASE_URL + `/profiles/${profileName}?_posts=true`;
+const profileURL = BASE_URL + `/profiles/${profileName}?_posts=true&_followers=true`;
+const followURL = BASE_URL + `/profiles/${profileName}/follow`;
+const unfollowURL = BASE_URL + `/profiles/${profileName}/unfollow`;
 nameContainer.innerHTML = profileName;
 
 const feedOption = {
@@ -30,13 +31,24 @@ const feedOption = {
     },
 };
 
+const followOption = {
+    method: 'PUT',
+    headers: {
+        Authorization: `Bearer ${accessToken}`,
+    },
+};
+
+profileFeedContainer.innerHTML = loading;
+
+followBtnContainer.disabled = true;
+followBtnTextContainer.innerHTML = loadingProfile;
+
 async function feedProfile(fURL) {
-    profileFeedContainer.innerHTML = loading;
+
     const apiJson = await apiRequest(fURL, feedOption);
     profileFeedContainer.innerHTML = "";
     if (apiJson['output'] == 'json') {
         const cleanContent = contentClean(apiJson['json']['posts']);
-        console.log('async', apiJson['json']['posts']);
 
         postsContainer.innerHTML = apiJson['json']['_count']['posts'];
         followersContainer.innerHTML = apiJson['json']['_count']['followers'];
@@ -44,6 +56,21 @@ async function feedProfile(fURL) {
 
         if (apiJson['json']['_count']['posts'] == 0) {
             setFeedback(profileFeedContainer, profileFeedContainer, "You have not posted yet", "text-center");
+        }
+
+        const isFollower = apiJson['json']['followers'].find(({ name }) => name === currentUser);
+        if (isFollower) {
+            followBtnTextContainer.innerHTML = 'following';
+            followBtnContainer.disabled = false;
+        }
+
+        else {
+            followBtnTextContainer.innerHTML = 'follow';
+            followBtnContainer.disabled = false;
+        }
+
+        if (profileName === currentUser) {
+            followBtnContainer.disabled = true;
         }
 
         for (let i = 0; i < cleanContent.length; i++) {
@@ -71,5 +98,32 @@ async function feedProfile(fURL) {
         console.log('error', apiJson['error']);
     }
 }
+
+async function followProfile() {
+
+    const followState = followBtnTextContainer.innerHTML;
+
+    switch (followState) {
+        case 'follow':
+            const followResponse = await apiRequest(followURL, followOption);
+
+            if (followResponse['json']['name']) {
+                followBtnTextContainer.innerHTML = 'following';
+                followersContainer.innerHTML = parseInt(followersContainer.innerText) + 1;
+            }
+            break;
+
+        case 'following':
+            const unfollowResponse = await apiRequest(unfollowURL, followOption);
+
+            if (unfollowResponse['json']['name']) {
+                followBtnTextContainer.innerHTML = 'follow';
+                followersContainer.innerHTML = parseInt(followersContainer.innerText) - 1;
+            }
+            break;
+    }
+}
+
+followBtnContainer.addEventListener('click', followProfile);
 
 feedProfile(profileURL);
