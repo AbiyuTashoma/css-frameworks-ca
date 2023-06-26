@@ -17,7 +17,13 @@
 
 .post-icon:hover {
     cursor: pointer;
-    background-color: aqua;
+    // background-color: aqua;
+    // fill: green;
+}
+
+.svg-fill:hover {
+    cursor: pointer;
+    fill: red;
 }
 
 .divider {

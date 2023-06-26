@@ -32,9 +32,9 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                                 <img src="${jasonArray['media']}" class="col-12">
                                 <div class="d-flex align-items-center justify-content-between mt-2">
                                     <div>
+                                        <img src="src/image/icons/heart.png" class="post-icon" alt="like">
                                         <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
                                         <img src="src/image/icons/share.png" class="post-icon" alt="share">
-                                        <img src="src/image/icons/heart.png" class="post-icon" alt="like">
                                     </div>
                                     <div class="dropdown">
                                         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,9 +52,13 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
+                        <svg viewBox="0 100 1024 1024" height="20" width="25" class="svg-fill" fill="green" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_iconCarrier">
+                                <path d="M725.333333 192c-89.6 0-168.533333 44.8-213.333333 115.2C467.2 236.8 388.266667 192 298.666667 192 157.866667 192 42.666667 307.2 42.666667 448c0 253.866667 469.333333 512 469.333333 512s469.333333-256 469.333333-512c0-140.8-115.2-256-256-256z"></path>
+                            </g>
+                        </svg>
                         <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
                         <img src="src/image/icons/share.png" class="post-icon" alt="share">
-                        <img src="src/image/icons/heart.png" class="post-icon" alt="like">
                     </div>
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -105,9 +109,9 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                                 <p>${jasonArray['body']}</p>
                                 <img src="${jasonArray['media']}" class="col-12">
                                 <div class="d-flex align-items-center mt-2">
+                                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
                                     <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
                                     <img src="src/image/icons/share.png" class="post-icon" alt="share">
-                                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
                                 </div>
                                 <div class="d-flex justify-content-center gap-2 mt-2">
                                     <input type="submit" id="delete-btn" class="custom-btn btn-primary" value="Delete post">
