@@ -10,20 +10,18 @@
     width: 2em;
 }
 
-.post-icon {
-    width: 1.25em;
-    margin-right: 1em;
-}
-
-.post-icon:hover {
-    cursor: pointer;
-    // background-color: aqua;
-    // fill: green;
+.svg-fill {
+    fill: none;
+    stroke: $primary;
+    stroke-width: 55;
+    width: 25px;
+    height: auto;
+    margin-right: 0.5em;
 }
 
 .svg-fill:hover {
     cursor: pointer;
-    fill: red;
+    fill: $primary;
 }
 
 .divider {
