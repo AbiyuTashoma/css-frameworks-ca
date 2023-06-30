@@ -57,8 +57,13 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                                 <path d="M725.333333 192c-89.6 0-168.533333 44.8-213.333333 115.2C467.2 236.8 388.266667 192 298.666667 192 157.866667 192 42.666667 307.2 42.666667 448c0 253.866667 469.333333 512 469.333333 512s469.333333-256 469.333333-512c0-140.8-115.2-256-256-256z"></path>
                             </g>
                         </svg>
-                        <svg viewBox="0 0 24 24" class="svg-fill" xmlns="http://www.w3.org/2000/svg">
-                            <g><defs><style>.cls-1{stroke:rgb(1, 84, 158);stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><path class="cls-1" d="M1.5,5.3v9.54a3.82,3.82,0,0,0,3.82,3.82H7.23v2.86L13,18.66h5.73a3.82,3.82,0,0,0,3.82-3.82V5.3a3.82,3.82,0,0,0-3.82-3.82H5.32A3.82,3.82,0,0,0,1.5,5.3Z"></path><line class="cls-1" x1="15.82" y1="10.07" x2="17.73" y2="10.07"></line><line class="cls-1" x1="11.05" y1="10.07" x2="12.95" y2="10.07"></line><line class="cls-1" x1="6.27" y1="10.07" x2="8.18" y2="10.07"></line></g>
+                        <svg viewBox="0 0 1024 1024" class="svg-fill" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path d="M64 226.13v407.04a162.13 163 0 0 0 163 163H308.48v122.03L554.67 796.16h244.48a163 163 0 0 0 163-163V226.13a163 163 0 0 0-163-163H227A163 163 0 0 0 64 226,13Z"></path>
+                                <line x1="675" y1="429.65" x2="756.48" y2="429.65"></line>
+                                <line x1="471.47" y1="429.65" x2="552.53" y2="429.65"></line>
+                                <line x1="267.52" y1="429.65" x2="349.01" y2="429.65"></line>
+                            </g>
                         </svg>
                         <svg viewBox="0 0 1024 1024" class="svg-fill" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <g>
