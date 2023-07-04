@@ -32,9 +32,9 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                                 <img src="${jasonArray['media']}" class="col-12">
                                 <div class="d-flex align-items-center justify-content-between mt-2">
                                     <div>
-                                        <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
-                                        <img src="src/image/icons/share.png" class="post-icon" alt="share">
-                                        <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                                        ${like512}
+                                        ${comment512}
+                                        ${share512}
                                     </div>
                                     <div class="dropdown">
                                         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,9 +52,9 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
-                        <img src="src/image/icons/share.png" class="post-icon" alt="share">
-                        <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                        ${like512}
+                        ${comment512}
+                        ${share512}
                     </div>
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -105,9 +105,9 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                                 <p>${jasonArray['body']}</p>
                                 <img src="${jasonArray['media']}" class="col-12">
                                 <div class="d-flex align-items-center mt-2">
-                                    <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
-                                    <img src="src/image/icons/share.png" class="post-icon" alt="share">
-                                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
+                                    ${like512}
+                                    ${comment512}
+                                    ${share512}
                                 </div>
                                 <div class="d-flex justify-content-center gap-2 mt-2">
                                     <input type="submit" id="delete-btn" class="custom-btn btn-primary" value="Delete post">
