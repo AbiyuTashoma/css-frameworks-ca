@@ -32,9 +32,9 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                                 <img src="${jasonArray['media']}" class="col-12">
                                 <div class="d-flex align-items-center justify-content-between mt-2">
                                     <div>
-                                        <img src="src/image/icons/heart.png" class="post-icon" alt="like">
-                                        <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
-                                        <img src="src/image/icons/share.png" class="post-icon" alt="share">
+                                        ${like512}
+                                        ${comment512}
+                                        ${share512}
                                     </div>
                                     <div class="dropdown">
                                         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,27 +52,9 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <svg viewBox="0 0 1024 1024" class="svg-fill" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M 725.333333 192 c -89.6 0 -168.533333 44.8 -213.333333 115.2 C 467.2 236.8 388.266667 192 298.666667 192 157.866667 192 42.666667 307.2 42.666667 448 c 0 253.866667 469.333333 512 469.333333 512 s 469.333333 -256 469.333333 -512 c 0 -140.8 -115.2 -256 -256 -256 z"></path>
-                            </g>
-                        </svg>
-                        <svg viewBox="0 0 1024 1024" class="svg-fill" xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M64 226.13v407.04a162.13 163 0 0 0 163 163H308.48v122.03L554.67 796.16h244.48a163 163 0 0 0 163-163V226.13a163 163 0 0 0-163-163H227A163 163 0 0 0 64 226,13Z"></path>
-                                <line x1="675" y1="429.65" x2="756.48" y2="429.65"></line>
-                                <line x1="471.47" y1="429.65" x2="552.53" y2="429.65"></line>
-                                <line x1="267.52" y1="429.65" x2="349.01" y2="429.65"></line>
-                            </g>
-                        </svg>
-                        <svg viewBox="0 0 1024 1024" class="svg-fill" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M725.333333 192c-89.6 0-168.533333 44.8-213.333333 115.2C467.2 236.8 388.266667 192 298.666667 192 157.866667 192 42.666667 307.2 42.666667 448c0 253.866667 469.333333 512 469.333333 512s469.333333-256 469.333333-512c0-140.8-115.2-256-256-256z"></path>
-                            </g>
-                        </svg>
-                        <svg viewBox="100 170 824 924" class="svg-fill">
-                            <path d="M 200 620 C 0 300 300 0 512 400 C 724 0 1024 300 824 620 L 512 1024 z">
-                        </svg>
+                        ${like512}
+                        ${comment512}
+                        ${share512}
                     </div>
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -123,9 +105,9 @@ function createHtml(jasonArray, postAuthor, cnt, btnState = 'disabled') {
                                 <p>${jasonArray['body']}</p>
                                 <img src="${jasonArray['media']}" class="col-12">
                                 <div class="d-flex align-items-center mt-2">
-                                    <img src="src/image/icons/heart.png" class="post-icon" alt="like">
-                                    <img src="src/image/icons/comment-dots.png" class="post-icon" alt="comment">
-                                    <img src="src/image/icons/share.png" class="post-icon" alt="share">
+                                    ${like512}
+                                    ${comment512}
+                                    ${share512}
                                 </div>
                                 <div class="d-flex justify-content-center gap-2 mt-2">
                                     <input type="submit" id="delete-btn" class="custom-btn btn-primary" value="Delete post">
