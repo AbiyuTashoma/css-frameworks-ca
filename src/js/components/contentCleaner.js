@@ -1,4 +1,9 @@
-function contentClean (jsonContent) {
+/**
+ * sanitizes json content, replaces undefined content with empty string
+ * @param {json} jsonContent 
+ * @returns json
+ */
+function contentClean(jsonContent) {
     for (let i = 0; i < jsonContent.length; i++) {
 
         const contentBody = jsonContent[i]['body'];
