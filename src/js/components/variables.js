@@ -1,3 +1,6 @@
+// list of variables
+const accessToken = localStorage.getItem('accessToken');
+const currentUser = localStorage.getItem('currentUser');
 const BASE_URL = 'https://nf-api.onrender.com/api/v1/social';
 const postURL = BASE_URL + '/posts';
 const feedURL = BASE_URL + '/posts?' + '_author=true';

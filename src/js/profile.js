@@ -43,6 +43,10 @@ profileFeedContainer.innerHTML = loading;
 followBtnContainer.disabled = true;
 followBtnTextContainer.innerHTML = loadingProfile;
 
+/**
+ * creates feed posts of the user/profile
+ * @param {URL} fURL 
+ */
 async function feedProfile(fURL) {
 
     const apiJson = await apiRequest(fURL, feedOption);
@@ -99,6 +103,7 @@ async function feedProfile(fURL) {
     }
 }
 
+//follow or unfollow a profile
 async function followProfile() {
 
     const followState = followBtnTextContainer.innerHTML;

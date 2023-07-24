@@ -11,6 +11,10 @@ const feedOption = {
     },
 };
 
+/**
+ * creates feed post
+ * @param {URL} fURL 
+ */
 async function feed(fURL = feedURL) {
     feedContainer.innerHTML = loading;
 

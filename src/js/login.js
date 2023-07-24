@@ -26,8 +26,8 @@ async function loginUser(event) {
     const password = passwordContainer.value;
 
     const loginData = {
-        "email": `${name}`, //"profile_name@stud.noroff.no"
-        "password": `${password}`, //"theusualcode"
+        "email": `${name}`,
+        "password": `${password}`,
     };
 
     const loginOption = {

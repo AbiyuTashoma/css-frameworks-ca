@@ -1,4 +1,8 @@
 
+/**
+ * updates a post
+ * @param {URL} event 
+ */
 async function updatePost(event) {
     event.preventDefault();
 
