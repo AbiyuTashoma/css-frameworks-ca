@@ -1,0 +1,30 @@
+.profile-image {
+    width: 6em;
+}
+
+.follow-icon {
+    width: 1.25em;
+}
+
+.post-userimage {
+    width: 2em;
+}
+
+.svg-fill {
+    fill: none;
+    stroke: $primary;
+    stroke-width: 26;
+    width: 23px;
+    height: 20px;
+    margin-right: 0.5em;
+}
+
+.svg-fill:hover {
+    cursor: pointer;
+    fill: $primary;
+}
+
+.divider {
+    border-left: 1px solid;
+    height: 2em;
+}
